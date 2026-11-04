@@ -1,7 +1,7 @@
 # Registry Stack Marketplace
 
 Separate Astro static marketplace for marketplace.registrystack.org.
-PR preview deployment is authorized. Production deployment stays disabled until Jeremi explicitly authorizes it.
+Regular GitHub Pages deployment is authorized. Resolve the repository visibility or plan prerequisite before enabling PAGES_DEPLOYMENT_ENABLED. Never change repository visibility without Jeremi’s explicit approval.
 
 - npm run check:ci validates a clean checkout without private assets.
 - npm run check adds explicit local private-archive verification.

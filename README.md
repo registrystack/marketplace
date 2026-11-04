@@ -1,6 +1,6 @@
 # Registry Stack Marketplace
 
-Astro static site for marketplace.registrystack.org, kept local and unpublished for review. The source lives in the private registrystack/marketplace repository. Production hosting, domain changes, and production deployment remain disabled.
+Astro static site for marketplace.registrystack.org, kept local and unpublished for review. The source lives in the private registrystack/marketplace repository. Regular GitHub Pages deployment is prepared, with activation pending the repository visibility or plan prerequisite.
 
 ## Review locally
 
@@ -75,7 +75,7 @@ For compatibility with the existing native request form, requests use request_ty
 
 ## Repository and CI
 
-The repository is private at https://github.com/registrystack/marketplace. Marketplace CI runs on pull requests, pushes to main, and manual dispatch. Its token is read-only; it has no production deployment job, Pages write permission, production domain binding, or production secret configuration. Official actions are pinned to immutable commits.
+The repository is private at https://github.com/registrystack/marketplace. Marketplace CI runs on pull requests, pushes to main, and manual dispatch. Its build token is read-only. A separate Pages deployment job has the Pages and OIDC permissions required for publication; it runs only after successful checks on main and when PAGES_DEPLOYMENT_ENABLED is exactly true. Official actions are pinned to immutable commits.
 
 The workflow installs locked dependencies, runs check:ci, executes browser journeys on a temporary loopback server, and checks the fully intercepted request/analytics funnel. It uploads only the verified dist/ site and browser review images, retained for seven days. Preview output rejects ZIPs and other archives, private asset paths, live request/analytics configuration, and indexable HTML.
 
@@ -85,4 +85,4 @@ The tracking protocol and shared client are pinned by data/tracking-contract.jso
 
 Those pins describe the prepared protocol-v3 integration. They do not claim that the main website and documentation have been deployed with it.
 
-PR preview hosting is configured separately from these CI artifacts. A built artifact is not a deployed preview URL. Production remains disabled while the preview hosting account is selected and connected.
+The selected host is regular GitHub Pages. Pull requests produce CI review artifacts; main can publish the checked Pages artifact after explicit activation. GitHub currently refuses Pages activation for this private repository on the organization plan. See docs/github-pages.md for activation steps and the Cloudflare DNS configuration. No separate PR hosting service is required.

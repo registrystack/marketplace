@@ -1,0 +1,7 @@
+{
+  "type": "CNAME",
+  "name": "marketplace.registrystack.org",
+  "content": "registrystack.github.io",
+  "ttl": 1,
+  "proxied": false
+}
