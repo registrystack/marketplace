@@ -7,6 +7,7 @@ test('CI checks the archive-free site and publishes only a checked review artifa
   assert.match(workflow, /pull_request:/);
   assert.match(workflow, /contents: read/);
   assert.match(workflow, /persist-credentials: false/);
+  assert.match(workflow, /runs-on: ubuntu-24\.04/);
   for (const check of ['npm ci', 'npm run check:ci', 'node scripts/check-browser.mjs', 'npm run test:funnel', 'node scripts/verify-preview-artifact.mjs']) assert.ok(workflow.includes(check), check);
   assert.match(workflow, /path: dist\//);
   assert.doesNotMatch(workflow, /pull_request_target|pages: write|id-token: write|deploy-pages|--prod|content\/downloads/);
