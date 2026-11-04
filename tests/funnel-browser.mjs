@@ -8,7 +8,7 @@ import { chromium } from 'playwright';
 // All canonical hosts below are intercepted. No production service receives a request.
 const output = mkdtempSync(join(tmpdir(), 'marketplace-funnel-'));
 execFileSync(process.execPath, ['node_modules/astro/bin/astro.mjs', 'build', '--outDir', output], {
-  env: { ...process.env, PUBLIC_STARTER_REQUEST_ENDPOINT: 'https://forms.example.test/form/submit?formId=1&privacy=kiosk', PUBLIC_UMAMI_WEBSITE_ID: '00000000-0000-4000-8000-000000000001', PUBLIC_UMAMI_SCRIPT_SRC: 'https://stats.example.test/script.js' },
+  env: { ...process.env, PUBLIC_SHARED_TRACKING_ENABLED: 'false', PUBLIC_STARTER_REQUEST_ENDPOINT: 'https://forms.example.test/form/submit?formId=1&privacy=kiosk', PUBLIC_UMAMI_WEBSITE_ID: '00000000-0000-4000-8000-000000000001', PUBLIC_UMAMI_SCRIPT_SRC: 'https://stats.example.test/script.js' },
   stdio: 'pipe',
 });
 const browser = await chromium.launch({ headless: true });
@@ -18,6 +18,7 @@ try {
   const submissions = [];
   const unexpected = [];
   let failRequest = true;
+  let bridgeRequests = 0;
   page.on('pageerror', error => errors.push(error.message));
   await page.route('**/*', async route => {
     const request = route.request();
@@ -30,6 +31,7 @@ try {
     if (url.origin === 'https://stats.example.test') return route.fulfill({ contentType: 'text/javascript', body: 'window.__analytics=[];window.umami={track:(name,data)=>window.__analytics.push({name,data})};' });
     if (url.origin === 'https://fonts.googleapis.com') return route.fulfill({ contentType: 'text/css', body: '' });
     if (url.origin === 'https://registrystack.org' && url.pathname === '/tracking-bridge/') {
+      bridgeRequests++;
       return route.fulfill({ contentType: 'text/html', body: `<script>addEventListener('message',event=>{const request=event.data;if(request.protocol!=='registrystack-tracking'||request.version!==3)return;event.source.postMessage({protocol:request.protocol,version:3,id:request.id,ok:true,state:{choice:'rejected',generation:'00000000-0000-4000-8000-000000000002',expiresAt:Date.now()+86400000,revision:1}},event.origin)});</script>` });
     }
     if (url.origin === 'https://forms.example.test') {
@@ -66,6 +68,7 @@ try {
   assert.equal(submissions.length, 2);
   assert.ok(submissions.every(data => !data.has('mautic_device_id')));
   assert.equal(submissions[1].get('mauticform[source_page]'), 'https://marketplace.registrystack.org/packs/professional-licensing/');
+  assert.equal(bridgeRequests, 0, "Shared tracking stays disabled on the canonical origin until explicitly configured.");
   assert.deepEqual(unexpected, []);
   assert.deepEqual(errors, []);
   console.log('PASS: mocked request popup, failed-request retention, confirmed submission, separate intent/submission analytics, no visitor data in analytics, no production network.');

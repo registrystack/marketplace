@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 
 const title = 'Privacy policy';
 const description = 'What the Registry Stack Marketplace collects, why, and how to control optional tracking.';
+const sharedTrackingEnabled = import.meta.env.PUBLIC_SHARED_TRACKING_ENABLED === 'true';
 ---
 
 <Base title={title} description={description} screen="privacy">
@@ -45,6 +46,7 @@ const description = 'What the Registry Stack Marketplace collects, why, and how 
       </p>
 
       <h2>Optional visit tracking</h2>
+      {!sharedTrackingEnabled && <p>Optional visit tracking is currently disabled on this marketplace. The following controls apply when it is enabled.</p>}
       <p>
         Optional Mautic tracking relies on your consent. A fresh acceptance covers the main Registry
         Stack website, its canonical documentation, and this marketplace for six months. An earlier

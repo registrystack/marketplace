@@ -23,6 +23,7 @@ test('review artifact rejects archive bytes, live configuration, and indexable p
     '<meta name="robots" content="index,follow">',
     '<meta name="robots" content="noindex,nofollow"><form data-endpoint="https://forms.example.test/form/submit">',
     '<meta name="robots" content="noindex,nofollow"><div data-umami-website-id="configured">',
+    '<meta name="robots" content="noindex,nofollow"><div data-shared-tracking-enabled="true">',
   ]) {
     const path = fixture();
     writeFileSync(join(path, 'index.html'), unsafe);

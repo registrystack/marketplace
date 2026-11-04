@@ -1,7 +1,7 @@
 # Registry Stack Marketplace
 
 Separate Astro static marketplace for marketplace.registrystack.org.
-Regular GitHub Pages deployment is authorized. Resolve the repository visibility or plan prerequisite before enabling PAGES_DEPLOYMENT_ENABLED. Never change repository visibility without Jeremi’s explicit approval.
+The source repository is public and regular GitHub Pages deployment is authorized. Main may publish only after CI passes and only while PAGES_DEPLOYMENT_ENABLED is exactly true; leave it unset or set it to another value to stop publication.
 
 - npm run check:ci validates a clean checkout without private assets.
 - npm run check adds explicit local private-archive verification.
@@ -14,6 +14,7 @@ Regular GitHub Pages deployment is authorized. Resolve the repository visibility
 - Source archives stay in ignored content/downloads/, never public/ or dist/.
 - Download pack opens a request form. Only confirmed requests count as submitted; no automatic file delivery.
 - Keep personal data out of analytics. Local preview must not contact production analytics, bridge, or form endpoints.
+- Keep PUBLIC_SHARED_TRACKING_ENABLED false until the protocol-v3 website and documentation changes are ready for coordinated publication. Production builds must also leave analytics and form configuration empty until those integrations are deliberately enabled.
 - PublicSchema badges require recorded source provenance. Preserve attribution, licences, and archive integrity.
 - Contributions open user-reviewed GitHub drafts. Never send issues automatically.
 - Studio uses its checked local starter catalogue. Do not invent a launch or import protocol.

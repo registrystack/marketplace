@@ -158,6 +158,9 @@ test('component separates aggregate events from consented pageviews and never re
   assert.match(component, /installMarketplaceActionTracking/);
   assert.match(component, /window\.location\.origin === 'https:\/\/marketplace\.registrystack\.org'/);
   assert.match(component, /Tracking is disabled in local preview/);
+  assert.match(component, /PUBLIC_SHARED_TRACKING_ENABLED === 'true'/);
+  assert.match(component, /if \(!canonicalRuntime \|\| !sharedTrackingEnabled\)/);
+  assert.match(component, /Optional visit tracking is not enabled on this site/);
   assert.match(component, /website, documentation, and marketplace/i);
   assert.doesNotMatch(component, /\.associate\(|deviceId|mautic_device_id|mtc_id/);
   assert.match(privacy, /fresh acceptance/i);

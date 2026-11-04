@@ -21,6 +21,7 @@ export function verifyPreviewArtifact(directory) {
       pages++;
       assert.match(content, /<meta name="robots" content="noindex,nofollow"/);
       assert.doesNotMatch(content, /data-(?:endpoint|umami-script-src|umami-website-id)="[^\"]+"/, 'Review builds cannot include live form or analytics configuration.');
+      assert.doesNotMatch(content, /data-shared-tracking-enabled="true"/, 'Review builds cannot activate shared visit tracking.');
     }
   };
   inspect(root);

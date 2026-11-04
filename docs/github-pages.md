@@ -2,9 +2,9 @@
 
 The marketplace uses the regular GitHub Pages deployment from the checked main branch. CI still runs on every pull request. It publishes only after checks pass, from main, and when the repository variable PAGES_DEPLOYMENT_ENABLED is exactly true. Pull requests never deploy to the production Pages environment.
 
-## Current activation prerequisite
+## Repository visibility and private Pages
 
-The repository was created private. GitHub rejected Pages activation because the current organization plan does not support Pages for this private repository. The repository must either become public with the owner's explicit approval, or the organization must use a GitHub plan that supports private-repository Pages. Changing source visibility and changing website visibility are different actions; a public website does not require its source to be public on a suitable plan.
+This repository is public. GitHub plan support matters if a future repository or fork is private: private-repository Pages requires a plan that includes it, while a public repository can use public GitHub Pages. Changing source visibility and changing website visibility remain separate decisions; a public website does not require public source on a plan that supports private-repository Pages.
 
 No private archive bytes are tracked or uploaded. The 87 request-only ZIPs remain in ignored content/downloads/. Only static catalogue pages, CSS, and browser scripts enter the checked deployment artifact.
 
@@ -22,11 +22,11 @@ In the registrystack.org Cloudflare zone:
 
 The equivalent Cloudflare API request body is in [cloudflare-dns.json](cloudflare-dns.json). TTL 1 represents Auto. The CNAME target is the organization hostname, without a repository path.
 
-Because this record is DNS only, GitHub serves the TLS certificate. Cloudflare's proxy SSL mode does not control this hostname.
+The DNS-only CNAME has been verified against registrystack.github.io. GitHub serves the TLS certificate, so Cloudflare's proxy SSL mode does not control this hostname. DNS correctness alone does not establish that a Pages deployment is live.
 
-## GitHub activation
+## GitHub configuration and deployment
 
-After resolving the repository plan or visibility prerequisite:
+The repository uses this configuration:
 
 1. In repository Settings, Pages, select GitHub Actions as the deployment source.
 2. Set the custom domain to marketplace.registrystack.org. A CNAME file in this repository is not required by the Actions publishing method.
@@ -34,9 +34,11 @@ After resolving the repository plan or visibility prerequisite:
 4. Set the repository variable PAGES_DEPLOYMENT_ENABLED to true.
 5. Run Marketplace CI on main, or push a main-branch change. The deploy job consumes the same artifact that passed the checks.
 
-Setting the activation variable to any other value disables publication. GitHub Pages must be enabled first; the flag does not bypass a GitHub plan restriction.
+Setting the activation variable to any other value disables publication and can be used as an emergency stop. GitHub Pages must be enabled first; the flag does not bypass a GitHub plan restriction.
 
-The initial deployment retains noindex metadata and disallow-all robots.txt while the content remains under review. Form submissions and analytics remain unconfigured. Removing those review controls and enabling live integrations require a deliberate subsequent change.
+The initial deployment retains noindex metadata and disallow-all robots.txt while the content remains under review. The workflow sets PUBLIC_SHARED_TRACKING_ENABLED to false and leaves Umami analytics and the form endpoint unconfigured. Visitors can fill the request dialog, but its Send request button remains disabled. Removing the review controls or enabling any live integration requires a deliberate subsequent change.
+
+Pull requests upload the verified site as a downloadable CI artifact. They do not receive a hosted preview URL or deploy to GitHub Pages.
 
 ## Sources
 

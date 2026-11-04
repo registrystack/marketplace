@@ -1,6 +1,6 @@
 # Registry Stack Marketplace
 
-Astro static site for marketplace.registrystack.org, kept local and unpublished for review. The source lives in the private registrystack/marketplace repository. Regular GitHub Pages deployment is prepared, with activation pending the repository visibility or plan prerequisite.
+Astro static site for marketplace.registrystack.org. The source is public at https://github.com/registrystack/marketplace. Regular GitHub Pages deployment can publish the verified main-branch artifact after CI passes and the deployment switch is enabled.
 
 ## Review locally
 
@@ -10,9 +10,9 @@ Requires Node 24 or later and npm.
     npm run check:ci
     npm run dev
 
-Open http://127.0.0.1:4317. The server binds to loopback. The generated site is in dist/. Review builds include noindex metadata, a disallow-all robots.txt, and an X-Robots-Tag header from the local server. Publication requires a deliberate change to those controls.
+Open http://127.0.0.1:4317. The server binds to loopback. The generated site is in dist/. Review builds and the initial Pages publication include noindex metadata and a disallow-all robots.txt. The local server also adds an X-Robots-Tag header. Indexing requires a deliberate change to those controls.
 
-The local preview loads no analytics, shared consent bridge, or request endpoint. The request popup can be filled in for review, but Send request is disabled. No production form submissions are needed for verification.
+The default build loads no analytics, shared consent bridge, or request endpoint. The request popup can be filled in for review, but Send request is disabled. No production form submissions are needed for verification.
 
 ## Catalogue and pages
 
@@ -45,7 +45,7 @@ The allowlisted marketplace_action event distinguishes download_intent from requ
 
 Optional Mautic page activity uses the existing main-site consent bridge. The prepared integration adds the marketplace to a fresh protocol-v3 consent scope across the website, documentation, and marketplace. Earlier consent does not silently cover the extra property. DNT, GPC, refusal, expiry, and bridge failures keep optional tracking off. The marketplace cannot request the bridge's browser identity. Its form uses the unlinked kiosk request mode, regardless of tracking choice.
 
-The main website and documentation need their matching protocol-v3 preparations published together with any eventual marketplace launch. No such publication has occurred.
+PUBLIC_SHARED_TRACKING_ENABLED must also be exactly true before a marketplace build can contact the shared consent bridge. It defaults to false. Keep it false until the main website and documentation have their matching protocol-v3 changes ready for coordinated publication.
 
 ## Source archives and verification
 
@@ -71,18 +71,18 @@ Archive checks prove integrity and native file closure. They do not establish pr
 
 Prepared main-site changes keep its solution stories and leave current starter pages active by default. Only PUBLIC_MARKETPLACE_MIGRATION_ENABLED=true enables the 85 starter redirects and marketplace collection links. The prepared static redirects are HTML meta refresh documents, not HTTP 301 responses. The exact route map can later configure an edge redirect layer. No live routes have changed.
 
-For compatibility with the existing native request form, requests use request_type=starter and starter_id for every free pack, including integration packs. Reporting should treat starter_id as the general pack identifier; the public UI calls these packs. Before enabling live sending, verify that the existing form gateway allows the exact marketplace origin and preserves the canonical marketplace source_page. These hosting and endpoint changes have not been made.
+For compatibility with the existing native request form, requests use request_type=starter and starter_id for every free pack, including integration packs. Reporting should treat starter_id as the general pack identifier; the public UI calls these packs. Before enabling live sending, verify that the existing form gateway allows the exact marketplace origin and preserves the canonical marketplace source_page. The initial Pages publication leaves the request endpoint unconfigured, so visitors can fill the dialog but cannot send it.
 
 ## Repository and CI
 
-The repository is private at https://github.com/registrystack/marketplace. Marketplace CI runs on pull requests, pushes to main, and manual dispatch. Its build token is read-only. A separate Pages deployment job has the Pages and OIDC permissions required for publication; it runs only after successful checks on main and when PAGES_DEPLOYMENT_ENABLED is exactly true. Official actions are pinned to immutable commits.
+The repository is public at https://github.com/registrystack/marketplace. Marketplace CI runs on pull requests, pushes to main, and manual dispatch. Its build token is read-only. A separate Pages deployment job has the Pages and OIDC permissions required for publication; it runs only after successful checks on main and when PAGES_DEPLOYMENT_ENABLED is exactly true. Leaving the variable unset or changing it from true provides an emergency publication stop. Official actions are pinned to immutable commits.
 
-The workflow installs locked dependencies, runs check:ci, executes browser journeys on a temporary loopback server, and checks the fully intercepted request/analytics funnel. It uploads only the verified dist/ site and browser review images, retained for seven days. Preview output rejects ZIPs and other archives, private asset paths, live request/analytics configuration, and indexable HTML.
+The workflow installs locked dependencies, runs check:ci, executes browser journeys on a temporary loopback server, and checks the fully intercepted request/analytics funnel. It uploads only the verified dist/ site and browser review images, retained for seven days. The deployment build sets PUBLIC_SHARED_TRACKING_ENABLED to false and leaves Umami and request endpoint configuration empty. Preview output rejects ZIPs and other archives, private asset paths, live request/analytics configuration, and indexable HTML.
 
 The tracking protocol and shared client are pinned by data/tracking-contract.json. The explicit local cross-site integration check compares maintained checkouts without making the standalone CI depend on sibling repositories:
 
     node scripts/check-shared-tracking.mjs --website-root /absolute/website --docs-root /absolute/docs/site
 
-Those pins describe the prepared protocol-v3 integration. They do not claim that the main website and documentation have been deployed with it.
+Those pins describe the prepared protocol-v3 integration. They do not establish that the main website and documentation have published it, so shared tracking remains separately build-gated.
 
-The selected host is regular GitHub Pages. Pull requests produce CI review artifacts; main can publish the checked Pages artifact after explicit activation. GitHub currently refuses Pages activation for this private repository on the organization plan. See docs/github-pages.md for activation steps and the Cloudflare DNS configuration. No separate PR hosting service is required.
+The selected host is regular GitHub Pages. Pull requests produce downloadable CI review artifacts but no hosted PR environment. Main can publish the checked Pages artifact after explicit activation. See docs/github-pages.md for repository configuration, deployment controls, and the Cloudflare DNS record. No separate PR hosting service is used.
