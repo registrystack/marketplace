@@ -10,6 +10,7 @@ import {
   marketplaceAnalyticsConfig,
   marketplaceCanonicalPath,
   marketplaceTrackingAllowed,
+  marketplaceUmamiBeforeSend,
   trackMarketplaceAction,
 } from '../src/tracking/marketplace-tracking.mjs';
 import {
@@ -126,6 +127,52 @@ test('allows only reviewed aggregate actions and public pack identifiers', () =>
   assert.equal(trackMarketplaceAction(element, { path: '/', umami: undefined }), false);
 });
 
+test('sanitizes Umami event location without changing SDK metadata or event data', () => {
+  const payload = {
+    website: '00000000-0000-4000-8000-000000000001',
+    hostname: 'marketplace.registrystack.org',
+    screen: '1440x900',
+    language: 'en-US',
+    title: 'Professional licensing',
+    url: 'https://marketplace.registrystack.org/packs/professional-licensing/?email=person@example.org#request-form',
+    referrer: 'https://marketplace.registrystack.org/contribute/?message=private#form',
+    name: 'marketplace_action',
+    data: { action: 'download_intent', source_path: '/packs/professional-licensing/' },
+  };
+  const sanitized = marketplaceUmamiBeforeSend('event', payload);
+  assert.deepEqual(sanitized, {
+    ...payload,
+    url: '/packs/professional-licensing/',
+    referrer: 'https://marketplace.registrystack.org',
+  });
+  assert.notEqual(sanitized, payload);
+  assert.match(payload.url, /person@example\.org/);
+
+  assert.equal(marketplaceUmamiBeforeSend('event', {
+    ...payload,
+    url: '/privacy/?email=person@example.org',
+    referrer: 'not a URL',
+  }).referrer, '');
+  assert.equal(marketplaceUmamiBeforeSend('event', {
+    ...payload,
+    url: '/contribute/#private',
+    referrer: 'http://partner.example/private?email=person@example.org',
+  }).referrer, 'http://partner.example');
+});
+
+test('rejects non-events and Umami payloads for invalid or private routes', () => {
+  const payload = { url: '/', referrer: '' };
+  for (const [type, candidate] of [
+    ['identify', payload],
+    ['pageview', payload],
+    ['event', null],
+    ['event', []],
+    ['event', {}],
+    ['event', { ...payload, url: '/search/person@example.org/' }],
+    ['event', { ...payload, url: 'https://other.example/privacy/' }],
+  ]) assert.equal(marketplaceUmamiBeforeSend(type, candidate), false);
+});
+
 test('DNT and GPC keep optional Mautic tracking off', () => {
   assert.equal(trackingDeniedByBrowser({ navigator: { doNotTrack: '1' } }), true);
   assert.equal(trackingDeniedByBrowser({ navigator: { doNotTrack: 'yes' } }), true);
@@ -159,12 +206,20 @@ test('component separates aggregate events from consented pageviews and never re
   assert.match(component, /Tracking is disabled in local preview/);
   assert.match(component, /PUBLIC_SHARED_TRACKING_ENABLED === 'true'/);
   assert.match(component, /script\.dataset\.excludeHash = 'true'/);
+  assert.match(component, /window\.marketplaceUmamiBeforeSend = marketplaceUmamiBeforeSend/);
+  assert.match(component, /script\.dataset\.beforeSend = 'marketplaceUmamiBeforeSend'/);
+  assert.ok(
+    component.indexOf('window.marketplaceUmamiBeforeSend = marketplaceUmamiBeforeSend')
+      < component.indexOf('document.head.append(script)'),
+    'The sanitizer must be installed before the Umami SDK executes.',
+  );
   assert.match(component, /if \(!canonicalRuntime \|\| !sharedTrackingEnabled\)/);
   assert.match(component, /Optional visit tracking is not enabled on this site/);
   assert.match(component, /website and documentation/i);
   assert.match(component, /Marketplace tracking starts only after you accept here/);
   assert.match(privacy, /activity\s+already recorded from those sites/);
   assert.doesNotMatch(component, /\.associate\(|deviceId|mautic_device_id|mtc_id/);
+  assert.doesNotMatch(component, /\.identify\(/);
   assert.match(privacy, /fresh acceptance/i);
   assert.match(privacy, /Do Not Track and Global Privacy Control/i);
   assert.match(

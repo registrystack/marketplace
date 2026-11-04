@@ -97,6 +97,30 @@ export function marketplaceActionPayload(element, path) {
   return { action, source_path: sourcePath, ...(pack ? { pack } : {}) };
 }
 
+function marketplaceReferrerOrigin(value) {
+  if (typeof value !== 'string') return '';
+  try {
+    const url = new URL(value);
+    if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) return '';
+    return url.origin;
+  } catch {
+    return '';
+  }
+}
+
+export function marketplaceUmamiBeforeSend(type, payload) {
+  if (type !== 'event' || !payload || typeof payload !== 'object' || Array.isArray(payload)) {
+    return false;
+  }
+  const url = marketplaceCanonicalPath(payload.url);
+  if (!url) return false;
+  return {
+    ...payload,
+    url,
+    referrer: marketplaceReferrerOrigin(payload.referrer),
+  };
+}
+
 export function trackMarketplaceAction(element, { path, umami } = {}) {
   const payload = marketplaceActionPayload(element, path);
   if (!payload || typeof umami?.track !== 'function') return false;

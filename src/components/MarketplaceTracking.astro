@@ -80,11 +80,16 @@ const sharedTrackingEnabled = import.meta.env.PUBLIC_SHARED_TRACKING_ENABLED ===
     buildMarketplacePageview,
     installMarketplaceActionTracking,
     marketplaceTrackingAllowed,
+    marketplaceUmamiBeforeSend,
   } from '../tracking/marketplace-tracking.mjs';
 
   declare global {
     interface Window {
       umami?: { track(name: string, data: Record<string, string>): void };
+      marketplaceUmamiBeforeSend?: (
+        type: string,
+        payload: Record<string, unknown>,
+      ) => Record<string, unknown> | false;
     }
   }
 
@@ -109,6 +114,8 @@ const sharedTrackingEnabled = import.meta.env.PUBLIC_SHARED_TRACKING_ENABLED ===
     script.dataset.domains = analyticsConfig.dataset.umamiDomain ?? 'marketplace.registrystack.org';
     script.dataset.excludeSearch = 'true';
     script.dataset.excludeHash = 'true';
+    window.marketplaceUmamiBeforeSend = marketplaceUmamiBeforeSend;
+    script.dataset.beforeSend = 'marketplaceUmamiBeforeSend';
     document.head.append(script);
   }
 
