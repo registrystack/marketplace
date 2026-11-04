@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap");
 @import "./styles/pack-details.css";
 
+body {
+  margin: 0;
+}
+
 #rs-marketplace-sketch .mp-task-choices {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -16,6 +16,7 @@ await page.route("https://fonts.googleapis.com/**", (route) =>
   route.fulfill({ status: 200, contentType: "text/css", body: "" }),
 );
 await page.goto(origin);
+assert.equal(await page.locator('body').evaluate(node => getComputedStyle(node).margin), '0px', 'The page must sit flush with the viewport.');
 await page
   .getByRole("heading", {
     name: "Build a register. Connect an existing system.",
