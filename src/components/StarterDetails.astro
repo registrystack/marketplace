@@ -1,0 +1,181 @@
+---
+import { words, catalogue } from '../lib/catalogue.mjs';
+const { starter } = Astro.props;
+const label = id => starter.recordTypes.find(type => type.id === id)?.label || words(id);
+const fieldTypes = { string: 'Text', text: 'Long text', date: 'Date', 'vocabulary-code': 'Code from a list', boolean: 'Yes or no', int64: 'Whole number', decimal: 'Number', 'crs84-point': 'Map point' };
+const classifications = { public: 'Public', internal: 'Staff only', restricted: 'Restricted' };
+const parts = { staffUi: 'Staff interface', evidenceCompanion: 'Evidence companion', clients: 'Client examples', statistics: 'Statistics', modules: 'Modules' };
+const mutationModes = { 'create-only': 'Added once, never changed', mutable: 'Can be changed' };
+const sourceLabel = value => {
+  const url = new URL(value);
+  return `${url.host}${url.pathname}${url.search}${url.hash}`;
+};
+---
+<div class="mp-native-details">
+  <section class="mp-detail-section" aria-labelledby="records-title">
+    <header class="mp-section-heading">
+      <p class="mp-eyebrow mp-section-kind">Records</p>
+      <h2 id="records-title">The records it holds.</h2>
+      <p>Review the model and its fields with the people responsible for your register. Required fields are marked with an asterisk.</p>
+    </header>
+    <div class="mp-record-grid">
+      {starter.recordTypes.map(type => (
+        <article class="mp-record-card" id={`record-${type.id}`}>
+          <header>
+            <h3>{type.label}</h3>
+            <p>{type.description}</p>
+            <p class="mp-record-meta">
+              <span class="mp-meta-chip">{classifications[type.classification] || type.classification}</span>
+              <span class="mp-meta-chip">{mutationModes[type.mutationMode] || type.mutationMode}</span>
+            </p>
+          </header>
+          <details class="mp-record-fields">
+            <summary>View {type.fields.length} fields</summary>
+            <div class="mp-field-content">
+              <dl class="mp-fields">
+                {type.fields.map(field => (
+                  <div>
+                    <dt>{words(field.id)}{field.required && <span aria-label=" required"> *</span>}</dt>
+                    <dd>
+                      {field.type === 'reference'
+                        ? <a href={`#record-${field.target}`}>Link to {label(field.target)}</a>
+                        : fieldTypes[field.type] || field.type}
+                      {field.classification && field.classification !== type.classification && (
+                        <small class="mp-field-classification">{classifications[field.classification] || field.classification}</small>
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              <details class="mp-technical-details">
+                <summary>Technical field metadata</summary>
+                <p>Record type: <code>{type.id}</code></p>
+                <ul>
+                  {type.fields.map(field => (
+                    <li>
+                      <code>{field.id}: {field.type}</code>
+                      {field.target && <> · Target: <code>{field.target}</code></>}
+                      {' · '}Classification: <code>{field.classification || type.classification}</code>
+                      {!field.classification && ' (inherited)'}
+                      {' · '}Required: <code>{String(Boolean(field.required))}</code>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </div>
+          </details>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="mp-detail-section" aria-labelledby="actions-title">
+    <header class="mp-section-heading">
+      <p class="mp-eyebrow mp-section-kind">Changes</p>
+      <h2 id="actions-title">The changes staff can record.</h2>
+      <p>These actions record changes under your institution’s rules. Your authority remains responsible for the decisions.</p>
+    </header>
+    {starter.actions.length === 0 ? (
+      <p class="mp-empty-note">No named Actions are defined in this starter. The native project may grant direct record operations; review those permissions before assigning a profile.</p>
+    ) : (
+      <div class="mp-action-list">
+        {starter.actions.map(action => (
+          <article class="mp-action-row">
+            <h3>{action.label || words(action.id)}</h3>
+            <p>{action.description}</p>
+            <details class="mp-technical-details">
+              <summary>Technical action identifier</summary>
+              <code>{action.id}</code>
+            </details>
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+  <section class="mp-detail-section" aria-labelledby="access-title">
+    <header class="mp-section-heading">
+      <p class="mp-eyebrow mp-section-kind">Access</p>
+      <h2 id="access-title">Who can do what.</h2>
+      <p>Access profiles describe permitted actions and readable record types. Your team assigns people and configures the required scopes and purposes.</p>
+    </header>
+    <div class="mp-profile-list">
+      {starter.accessProfiles.map(profile => (
+        <details class="mp-profile">
+          <summary>
+            <h3>{words(profile.id)}</h3>
+            <span>{profile.actions.length} named {profile.actions.length === 1 ? 'action' : 'actions'} · {profile.recordTypes.length} readable {profile.recordTypes.length === 1 ? 'record type' : 'record types'}</span>
+          </summary>
+          <div class="mp-profile-content">
+            <p>Profile: <code>{profile.id}</code></p>
+            <div>
+              <h4>Named actions</h4>
+              {profile.actions.length ? (
+                <ul>{profile.actions.map(id => <li>{starter.actions.find(action => action.id === id)?.label || words(id)} <code>({id})</code></li>)}</ul>
+              ) : (
+                <p>None defined for this profile. Direct record operations may still be granted by the native project.</p>
+              )}
+            </div>
+            <div>
+              <h4>Readable record types</h4>
+              {profile.recordTypes.length
+                ? <ul>{profile.recordTypes.map(id => <li>{label(id)} <code>({id})</code></li>)}</ul>
+                : <p>No readable record types are listed.</p>}
+            </div>
+            <div>
+              <h4>Required scopes</h4>
+              {profile.requiredScopes.length
+                ? <ul>{profile.requiredScopes.map(scope => <li><code>{scope}</code></li>)}</ul>
+                : <p>No scopes are specified.</p>}
+            </div>
+            <div>
+              <h4>Required purposes</h4>
+              {profile.requiredPurposes.length
+                ? <ul>{profile.requiredPurposes.map(purpose => <li><code>{purpose}</code></li>)}</ul>
+                : <p>No purposes are specified.</p>}
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+  <section class="mp-detail-section" id="whats-inside" aria-labelledby="setup-title">
+    <header class="mp-section-heading">
+      <p class="mp-eyebrow mp-section-kind">Setup</p>
+      <h2 id="setup-title">Files and local setup.</h2>
+      <p>The archive contains starter sources. Generate a project with your own values, then run the matching product checks.</p>
+    </header>
+    <div class="mp-setup-grid">
+      <div class="mp-setup-block">
+        <h3>Optional components</h3>
+        <dl class="mp-fields" data-optional-components>
+          {Object.entries(parts).map(([key, title]) => <div><dt>{title}</dt><dd>{starter.includes[key] ? 'Included' : 'Not included'}</dd></div>)}
+        </dl>
+      </div>
+      <div class="mp-setup-block">
+        <h3>Your configuration</h3>
+        <details class="mp-configuration-values">
+          <summary>View {starter.valuesKeys.length} configuration values</summary>
+          <ul>{starter.valuesKeys.map(key => <li>{words(key)} <code>({key})</code></li>)}</ul>
+        </details>
+      </div>
+    </div>
+    <div class="mp-source-notes">
+      <div>
+        <h3>Versions and licences</h3>
+        <p>Base Registry Engine {catalogue.source.breg.version}. Code is licensed under Apache 2.0.</p>
+        <p>Licence and notice files are included in each archive.</p>
+      </div>
+      <div id="publicschema-attribution">
+        <h3>Built with PublicSchema</h3>
+        <p>This starter uses content from PublicSchema {catalogue.source.publicschema.version}, licensed under CC BY 4.0. Catalogue references: {starter.catalogueRows.join(', ')}. The archive includes the source attribution and licence notices.</p>
+        <p>Revision: <code>{catalogue.source.publicschema.revision}</code></p>
+        <p><a href="https://publicschema.org/" target="_blank" rel="noopener noreferrer">Explore PublicSchema ↗</a></p>
+        <p><a href={`${catalogue.source.publicschema.repository}/tree/${catalogue.source.publicschema.revision}`} target="_blank" rel="noopener noreferrer">View the pinned PublicSchema source ↗</a></p>
+      </div>
+      <details class="mp-source-references">
+        <summary>View {starter.sourceUrls.length} public register {starter.sourceUrls.length === 1 ? 'reference' : 'references'}</summary>
+        <p>These references informed the model. They do not imply endorsement or a deployment of Registry Stack.</p>
+        <ul>{starter.sourceUrls.map(url => <li><a href={url} rel="noopener noreferrer" target="_blank">{sourceLabel(url)} ↗</a></li>)}</ul>
+      </details>
+    </div>
+  </section>
+</div>

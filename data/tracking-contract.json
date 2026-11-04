@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": 3,
+  "scope": "website-docs-marketplace",
+  "files": {
+    "tracking-protocol.mjs": "bab531ae70933e2fdc21fc913294fac76e14f51482d48a453e275c8cda4c02c0",
+    "shared-tracking-client.mjs": "1799d369925e691ebd96829678030f5c7a808dc7f91bc03a6478301a7d2de4cc"
+  }
+}

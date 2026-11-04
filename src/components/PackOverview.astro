@@ -1,0 +1,40 @@
+---
+const { pack, category } = Astro.props;
+const lead = pack.overview.split(/(?<=[.!?])\s+(?=[A-Z])/)[0];
+const remainingScope = pack.overview.slice(lead.length).trim();
+const starter = pack.native;
+---
+<section class="mp-detail-section mp-overview" aria-labelledby="overview-title">
+  <header class="mp-section-heading">
+    <p class="mp-eyebrow">Overview</p>
+    <h2 id="overview-title">{starter ? 'What this starter covers.' : category?.title || 'A service kit we are exploring.'}</h2>
+  </header>
+  <div class="mp-overview-grid">
+    <div class="mp-scope">
+      <p class="mp-scope-lead">{lead}</p>
+      {remainingScope && (
+        <details class="mp-scope-details">
+          <summary>Scope and recording rules</summary>
+          <p>{remainingScope}</p>
+        </details>
+      )}
+      {starter ? (
+        <dl class="mp-starter-counts" aria-label="Starter at a glance">
+          <div><dt>Types of record</dt><dd>{starter.recordTypes.length}</dd></div>
+          <div><dt>Named actions</dt><dd>{starter.actions.length}</dd></div>
+          <div><dt>Access profiles</dt><dd>{starter.accessProfiles.length}</dd></div>
+        </dl>
+      ) : (
+        <div class="mp-definition-preview">
+          <p class="mp-eyebrow">Pack outline</p>
+          <div class="mp-model">{pack.model.map(label => <span>{label}</span>)}</div>
+        </div>
+      )}
+    </div>
+    <aside class="mp-local-requirements">
+      <h3>Your team supplies</h3>
+      <ul>{pack.local.map(item => <li>{item}</li>)}</ul>
+      <p>Review the pack against your institution’s rules before use.</p>
+    </aside>
+  </div>
+</section>

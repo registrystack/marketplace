@@ -1,0 +1,193 @@
+---
+import Base from '../layouts/Base.astro';
+import CollectionLinks from '../components/CollectionLinks.astro';
+import { packs } from '../lib/catalogue.mjs';
+import { renderCatalogue, renderCategoryIcon } from '../catalogue.js';
+---
+<Base title="Reusable registry starters and integrations" description="Free registry starters, data integrations, and fact-check source connections. Access on request.">    <section
+      class="mp-view"
+      data-screen="home"
+      aria-label="Marketplace homepage"
+    >
+      <div class="mp-hero">
+        <div class="mp-wrap mp-hero-grid">
+          <div>
+            <p class="mp-eyebrow">
+              Reusable packs for institutional records and services
+            </p>
+            <h1>Build a register.<br />Connect an existing system.</h1>
+            <p class="mp-hero-lead">
+              Registry Stack is open-source software for managing institutional
+              records and controlling how they are shared. Choose a reusable
+              pack for the task your team needs to do. Access is free on request.
+            </p>
+            <div class="mp-actions">
+              <a class="mp-button mp-on-blue" href="#mp-free-packs">
+                Explore free packs <span aria-hidden="true">↓</span>
+              </a>
+              <a
+                class="mp-button mp-on-blue-outline cursor-interaction"
+
+                data-route="contribute"
+               href="/contribute/">
+                Share a pack <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+          <aside class="mp-feature" aria-label="Packs and starters explained">
+            <p class="mp-eyebrow">New to Registry Stack?</p>
+            <h2>What is a pack?</h2>
+            <p>
+              A pack is a download containing configuration or connection code,
+              with examples for a specific task.
+            </p>
+            <h3>And a registry starter?</h3>
+            <p>
+              A starter is one kind of pack: a model for a new register, ready
+              for your technical team to adapt.
+            </p>
+            <p class="mp-feature-note">
+              These are building blocks. Your team configures, checks, and
+              deploys the service.
+            </p>
+          </aside>
+        </div>
+      </div>
+      <section
+        id="mp-free-packs"
+        class="mp-wrap mp-section"
+        aria-labelledby="mp-browse-title"
+      >
+        <div class="mp-section-head">
+          <div>
+            <h2 id="mp-browse-title">What does your team need to do?</h2>
+            <p>
+              Choose a task below. Inspect the contents, request access, and see
+              what your team adds.
+            </p>
+          </div>
+          <span class="mp-free-note">All packs below are free on request</span>
+        </div>
+        <div class="mp-browse-tools">
+          <div class="mp-search">
+            <label class="mp-sr" for="mp-search">Search free packs</label
+            ><input
+              id="mp-search"
+              type="search"
+              placeholder="Search a register or system…"
+            />
+          </div>
+        </div>
+        <div class="mp-task-choices" aria-label="Choose your task">
+          <button
+            class="mp-task-option"
+            type="button"
+            data-filter="starter" data-marketplace-action="category_filter"
+            aria-pressed="false"
+           data-category="starter"><Fragment set:html={renderCategoryIcon("starter")} />
+            <strong>Start a new register</strong
+            ><span>A model for your records and their permitted changes.</span
+            ><small>Registry starters</small></button
+          ><button
+            class="mp-task-option"
+            type="button"
+            data-filter="integration" data-marketplace-action="category_filter"
+            aria-pressed="false"
+           data-category="integration"><Fragment set:html={renderCategoryIcon("integration")} />
+            <strong>Read data from another system</strong
+            ><span>Connection code for a system you already use.</span
+            ><small>Data integration packs</small></button
+          ><button
+            class="mp-task-option"
+            type="button"
+            data-filter="evidence" data-marketplace-action="category_filter"
+            aria-pressed="false"
+           data-category="evidence"><Fragment set:html={renderCategoryIcon("evidence")} />
+            <strong>Connect a source for fact checks</strong
+            ><span>Source data for a specific, authorized question.</span
+            ><small>Fact-check source connections</small>
+          </button>
+        </div>
+        <CollectionLinks compact />
+        <div class="mp-results-tools">
+          <button
+            class="mp-link"
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            Show all packs
+          </button>
+        </div>
+        <div class="mp-catalogue" id="mp-pack-grid" aria-label="Free packs" set:html={renderCatalogue(packs)} />
+        <div id="mp-search-empty" class="mp-empty" hidden>
+          <p>No packs match this search.</p>
+          <button
+            class="mp-link cursor-interaction"
+            type="button"
+            data-clear-search
+          >
+            Clear search
+          </button>
+        </div>
+        <span
+          class="mp-sr"
+          id="mp-search-status"
+          role="status"
+          aria-live="polite"
+        ></span>
+      </section>
+      <section
+        class="mp-community"
+        aria-labelledby="mp-community-title"
+        id="mp-home-community"
+      >
+        <div class="mp-wrap mp-community-inner">
+          <div>
+            <p class="mp-eyebrow">A place for your contribution</p>
+            <h2 id="mp-community-title">Your experience belongs here.</h2>
+            <p>
+              Share a starter, improve an integration, or contribute an example.
+              Your work stays credited to you and your organisation.
+            </p>
+          </div>
+          <div class="mp-actions">
+            <a
+              class="mp-button mp-on-blue cursor-interaction"
+
+              data-route="contribute"
+             href="/contribute/">
+              Contribute a pack <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section
+        class="mp-planned"
+        id="mp-premium-section"
+        aria-labelledby="mp-premium-title"
+      >
+        <div class="mp-wrap mp-section mp-planned-row">
+          <div>
+            <span class="mp-badge mp-badge-neutral"
+              >Paid packs · Coming soon</span
+            >
+            <h3 id="mp-premium-title">More complete service kits.</h3>
+            <p>
+              We are exploring maintained kits that combine registry, review,
+              and Evidence projects. Professional licensing is one proposed
+              starting point.
+            </p>
+          </div>
+          <a
+            class="mp-button cursor-interaction"
+
+            data-pack="licensing-service"
+           href="/packs/licensing-service/">
+            See what is planned <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </section>
+
+<script>import '../scripts/catalogue.js';</script></Base>

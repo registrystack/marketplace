@@ -1,0 +1,121 @@
+/* Starter pages keep the catalogue's type, colour, and spacing vocabulary. */
+#rs-marketplace-sketch .mp-detail-layout { padding-top:48px;padding-bottom:64px; }
+#rs-marketplace-sketch .mp-detail-layout.mp-has-rail { display:grid;grid-template-columns:180px minmax(0,1fr);gap:48px;align-items:start; }
+#rs-marketplace-sketch .mp-detail-main { min-width:0; }
+#rs-marketplace-sketch .mp-page-rail { position:sticky;top:28px; }
+#rs-marketplace-sketch .mp-page-rail nav { display:flex;flex-direction:column;gap:4px; }
+#rs-marketplace-sketch .mp-page-rail .mp-eyebrow { margin-bottom:16px;color:var(--mp-secondary);font-size:10px; }
+#rs-marketplace-sketch .mp-page-rail a { display:flex;gap:10px;padding:9px 0;font-size:12px;text-decoration:none;color:var(--mp-secondary);line-height:1.45; }
+#rs-marketplace-sketch .mp-page-rail a:hover { color:var(--mp-blue);text-decoration:underline; }
+#rs-marketplace-sketch .mp-page-rail a span { font:10px/1.8 'IBM Plex Mono',monospace;color:var(--mp-blue); }
+#rs-marketplace-sketch .mp-detail-main .mp-detail-section { padding:40px 0;border-bottom:1px solid var(--mp-rule);scroll-margin-top:24px; }
+#rs-marketplace-sketch .mp-detail-main > .mp-detail-section:first-child { padding-top:0; }
+#rs-marketplace-sketch .mp-section-heading { margin-bottom:24px;max-width:68ch; }
+#rs-marketplace-sketch .mp-section-heading .mp-eyebrow { color:var(--mp-blue);font-size:10px;margin-bottom:9px; }
+#rs-marketplace-sketch .mp-section-heading h2 { font-size:27px;line-height:1.25;letter-spacing:-.7px; }
+#rs-marketplace-sketch .mp-section-heading > p:not(.mp-eyebrow) { margin-top:10px;color:var(--mp-secondary);font-size:14px;line-height:1.65; }
+#rs-marketplace-sketch .mp-overview-grid { display:grid;grid-template-columns:minmax(0,1.35fr) minmax(200px,.85fr);gap:28px;align-items:start; }
+#rs-marketplace-sketch .mp-scope-lead { font-size:16px;line-height:1.7;max-width:62ch; }
+#rs-marketplace-sketch .mp-detail-main details { overflow-wrap:anywhere; }
+#rs-marketplace-sketch .mp-detail-main summary { cursor:pointer;color:var(--mp-blue);font-size:13px;line-height:1.5; }
+#rs-marketplace-sketch .mp-detail-main details > summary { padding:12px 0; }
+#rs-marketplace-sketch .mp-detail-main details > p { margin:0 0 14px;color:var(--mp-secondary);font-size:14px;line-height:1.7; }
+#rs-marketplace-sketch .mp-scope-details { margin-top:8px; }
+#rs-marketplace-sketch .mp-starter-counts { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--mp-rule);margin:24px 0 0;padding-top:18px;gap:14px; }
+#rs-marketplace-sketch .mp-starter-counts > div { display:flex;flex-direction:column-reverse;gap:4px; }
+#rs-marketplace-sketch .mp-starter-counts dd { font-size:27px;line-height:1.2;font-weight:650;letter-spacing:-.7px;margin:0;color:var(--mp-blue); }
+#rs-marketplace-sketch .mp-starter-counts dt { font-size:11px;color:var(--mp-secondary); }
+#rs-marketplace-sketch .mp-local-requirements { background:var(--mp-soft);border-left:2px solid var(--mp-rule);padding:20px; }
+#rs-marketplace-sketch .mp-local-requirements h3 { font-size:15px; }
+#rs-marketplace-sketch .mp-local-requirements ul { margin:14px 0;padding-left:17px;color:var(--mp-secondary);font-size:12px;line-height:1.7; }
+#rs-marketplace-sketch .mp-local-requirements li + li { margin-top:8px; }
+#rs-marketplace-sketch .mp-local-requirements p { font-size:11px;line-height:1.6;color:var(--mp-secondary); }
+#rs-marketplace-sketch .mp-record-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start; }
+#rs-marketplace-sketch .mp-record-card { border:1px solid var(--mp-rule);border-radius:4px;min-width:0;scroll-margin-top:24px;overflow:hidden; }
+#rs-marketplace-sketch .mp-record-card > header { padding:20px 20px 0; }
+#rs-marketplace-sketch .mp-record-card h3 { font-size:17px;line-height:1.35; }
+#rs-marketplace-sketch .mp-record-card header > p { margin-top:10px;color:var(--mp-secondary);font-size:13px;line-height:1.65; }
+#rs-marketplace-sketch .mp-record-meta { display:flex;flex-wrap:wrap;gap:6px;padding:16px 20px 20px; }
+#rs-marketplace-sketch .mp-meta-chip { display:inline-block;padding:4px 7px;border-radius:3px;background:var(--mp-soft);color:var(--mp-secondary);font-size:10px;line-height:1.4; }
+#rs-marketplace-sketch .mp-record-fields { border-top:1px solid var(--mp-rule);background:var(--mp-surface); }
+#rs-marketplace-sketch .mp-record-fields > summary { padding:13px 20px !important;font-weight:550;background:var(--mp-wash); }
+#rs-marketplace-sketch .mp-field-content { padding:0 20px 8px; }
+#rs-marketplace-sketch .mp-fields { margin:0; }
+#rs-marketplace-sketch .mp-fields div { display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;padding:10px 0;border-top:1px solid var(--mp-rule);font-size:12px;line-height:1.55; }
+#rs-marketplace-sketch .mp-fields div:first-child { border-top:0; }
+#rs-marketplace-sketch .mp-fields dt { font-weight:550;overflow-wrap:anywhere; }
+#rs-marketplace-sketch .mp-fields dd { margin:0;color:var(--mp-secondary);overflow-wrap:anywhere; }
+#rs-marketplace-sketch .mp-fields small { display:block;font-size:10px;margin-top:3px; }
+#rs-marketplace-sketch .mp-field-content details { border-top:1px solid var(--mp-rule); }
+#rs-marketplace-sketch .mp-field-content ul { padding-left:16px;font-size:11px;line-height:1.8; }
+#rs-marketplace-sketch .mp-detail-main code { font:11px/1.7 'IBM Plex Mono',monospace;overflow-wrap:anywhere; }
+#rs-marketplace-sketch .mp-action-list { border-top:1px solid var(--mp-rule); }
+#rs-marketplace-sketch .mp-action-row { padding:20px 0;border-bottom:1px solid var(--mp-rule); }
+#rs-marketplace-sketch .mp-action-row:last-child { border-bottom:0;padding-bottom:0; }
+#rs-marketplace-sketch .mp-action-row h3 { font-size:16px; }
+#rs-marketplace-sketch .mp-action-row > p { font-size:13px;line-height:1.7;color:var(--mp-secondary);margin-top:8px;max-width:68ch; }
+#rs-marketplace-sketch .mp-action-row details { margin-top:2px; }
+#rs-marketplace-sketch .mp-action-row details > summary { padding-bottom:0; }
+#rs-marketplace-sketch .mp-action-row details[open] > summary { padding-bottom:10px; }
+#rs-marketplace-sketch .mp-profile { border-bottom:1px solid var(--mp-rule); }
+#rs-marketplace-sketch .mp-profile:first-child { border-top:1px solid var(--mp-rule); }
+#rs-marketplace-sketch .mp-profile > summary { list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0 !important; }
+#rs-marketplace-sketch .mp-profile > summary::-webkit-details-marker { display:none; }
+#rs-marketplace-sketch .mp-profile > summary::after { content:'+';font-size:22px;font-weight:400;line-height:1; }
+#rs-marketplace-sketch .mp-profile[open] > summary::after { content:'−'; }
+#rs-marketplace-sketch .mp-profile summary h3 { font-size:16px;color:var(--mp-text); }
+#rs-marketplace-sketch .mp-profile summary span { font-size:11px;color:var(--mp-secondary); }
+#rs-marketplace-sketch .mp-profile-content { padding:0 0 20px;max-width:68ch;font-size:13px;line-height:1.7; }
+#rs-marketplace-sketch .mp-profile-content > p + p { margin-top:10px; }
+#rs-marketplace-sketch .mp-profile-content > dl { margin:0 0 10px; }
+#rs-marketplace-sketch .mp-profile-content dt { font-size:11px;font-weight:600;color:var(--mp-secondary);margin-top:12px; }
+#rs-marketplace-sketch .mp-profile-content dd { margin:4px 0 0; }
+#rs-marketplace-sketch .mp-profile-content ul { margin:4px 0;padding-left:18px; }
+#rs-marketplace-sketch .mp-setup-grid { display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start; }
+#rs-marketplace-sketch .mp-setup-grid h3 { font-size:16px;margin-bottom:12px; }
+#rs-marketplace-sketch .mp-setup-grid p { font-size:13px;line-height:1.7;color:var(--mp-secondary); }
+#rs-marketplace-sketch .mp-setup-grid details { border-top:1px solid var(--mp-rule);margin-top:16px; }
+#rs-marketplace-sketch .mp-setup-grid details ul { padding-left:18px;font-size:12px;line-height:1.9; }
+#rs-marketplace-sketch .mp-source-notes { margin-top:28px;padding:24px;background:var(--mp-soft);border-radius:4px; }
+#rs-marketplace-sketch .mp-source-notes h3 { font-size:15px;margin-bottom:10px; }
+#rs-marketplace-sketch .mp-source-notes p { font-size:12px;line-height:1.7;color:var(--mp-secondary);margin-top:8px; }
+#rs-marketplace-sketch .mp-source-notes a { font-size:12px; }
+#rs-marketplace-sketch .mp-source-notes details { border-top:1px solid var(--mp-rule);margin-top:18px;padding-top:6px; }
+#rs-marketplace-sketch .mp-source-notes ul { padding-left:17px;line-height:1.7; }
+#rs-marketplace-sketch .mp-source-notes li + li { margin-top:12px; }
+#rs-marketplace-sketch .mp-source-notes li a { display:block;overflow-wrap:anywhere; }
+#rs-marketplace-sketch .mp-source-notes li small { display:block;color:var(--mp-secondary);font-size:11px;overflow-wrap:anywhere; }
+#rs-marketplace-sketch .mp-compatibility-note { border-left:3px solid var(--mp-blue);padding:0 0 0 22px; }
+#rs-marketplace-sketch .mp-compatibility-reference { font-size:15px;font-weight:600; }
+#rs-marketplace-sketch .mp-compatibility-note p + p { font-size:13px;line-height:1.7;color:var(--mp-secondary);margin-top:10px; }
+#rs-marketplace-sketch .mp-compatibility-note > a { display:inline-block;font-size:13px;margin-top:14px; }
+#rs-marketplace-sketch .mp-pack-community { padding:28px;margin-top:32px;background:var(--mp-wash);border-radius:4px; }
+#rs-marketplace-sketch .mp-pack-community .mp-eyebrow { font-size:10px;color:var(--mp-blue);margin-bottom:8px; }
+#rs-marketplace-sketch .mp-pack-community h2 { font-size:23px; }
+#rs-marketplace-sketch .mp-pack-community p:not(.mp-eyebrow) { font-size:13px;line-height:1.7;color:var(--mp-secondary);margin-top:10px;max-width:62ch; }
+#rs-marketplace-sketch .mp-pack-community .mp-button { margin-top:18px;background:var(--mp-surface); }
+@media(max-width:1050px) {
+  #rs-marketplace-sketch .mp-detail-layout.mp-has-rail { grid-template-columns:150px minmax(0,1fr);gap:28px; }
+  #rs-marketplace-sketch .mp-overview-grid { grid-template-columns:1fr;gap:24px; }
+  #rs-marketplace-sketch .mp-local-requirements { max-width:100%; }
+}
+@media(max-width:800px) {
+  #rs-marketplace-sketch .mp-detail-layout.mp-has-rail { display:block; }
+  #rs-marketplace-sketch .mp-page-rail { position:static;margin-bottom:32px; }
+  #rs-marketplace-sketch .mp-page-rail nav { display:flex;flex-direction:row;flex-wrap:wrap;gap:4px 20px;border-bottom:1px solid var(--mp-rule);padding-bottom:16px; }
+  #rs-marketplace-sketch .mp-page-rail .mp-eyebrow { width:100%;margin-bottom:6px; }
+}
+@media(max-width:600px) {
+  #rs-marketplace-sketch .mp-detail-layout { padding-top:28px;padding-bottom:40px; }
+  #rs-marketplace-sketch .mp-record-grid,#rs-marketplace-sketch .mp-setup-grid { grid-template-columns:1fr;gap:18px; }
+  #rs-marketplace-sketch .mp-detail-main .mp-detail-section { padding:30px 0; }
+  #rs-marketplace-sketch .mp-section-heading h2 { font-size:25px; }
+  #rs-marketplace-sketch .mp-profile > summary { gap:12px; }
+  #rs-marketplace-sketch .mp-source-notes,#rs-marketplace-sketch .mp-pack-community { padding:20px; }
+}
+#rs-marketplace-sketch .mp-record-card header > .mp-record-meta { margin-top:14px;padding:0 0 18px; }
+#rs-marketplace-sketch .mp-profile-content > div + div { margin-top:16px; }
+#rs-marketplace-sketch .mp-profile-content h4 { font-size:12px;line-height:1.5;color:var(--mp-secondary);margin:0 0 6px;font-weight:600; }
+#rs-marketplace-sketch .mp-source-notes > div + div { margin-top:20px;padding-top:20px;border-top:1px solid var(--mp-rule); }
+#rs-marketplace-sketch .mp-section-heading h2[id] { scroll-margin-top:52px; }
+@media(max-width:736px) { #rs-marketplace-sketch .mp-record-grid { grid-template-columns:1fr; } }

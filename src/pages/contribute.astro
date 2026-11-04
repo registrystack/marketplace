@@ -1,0 +1,163 @@
+---
+import Base from '../layouts/Base.astro';
+import { packs } from '../lib/catalogue.mjs';
+---
+<Base title="Contribute a pack" description="Share a reusable starting point for review." screen="contribute">    <section
+      class="mp-view"
+      data-screen="contribute"
+      aria-label="Contribute a pack"
+    >
+      <div class="mp-contribute-hero">
+        <div class="mp-wrap">
+          <p class="mp-eyebrow">Community contributions</p>
+          <h1>Share something useful.</h1>
+          <p>
+            A model you adapted, a system you connected, or an example that
+            helped your team. Make it easier for someone else to get started.
+          </p>
+        </div>
+      </div>
+      <div class="mp-wrap mp-section mp-contribute-grid">
+        <div>
+          <h2>Introduce your pack.</h2>
+          <p class="mp-panel-intro">
+            Link to a public repository. Use synthetic examples and explain what
+            someone needs to supply locally.
+          </p>
+          <div
+            id="mp-contribution-origin"
+            class="mp-note"
+            style="margin-top: 20px"
+            hidden
+          >
+            <p id="mp-contribution-origin-label"></p>
+            <button
+              class="mp-link cursor-interaction"
+              type="button"
+              data-clear-origin
+            >
+              Contribute an independent pack instead
+            </button>
+          </div>
+          <form id="mp-contribution-form" class="mp-form">
+            <label class="mp-field"
+              >Pack name<input
+                name="packName"
+                required
+                maxlength="100"
+                autocomplete="off"
+                placeholder="A clear name for the job it helps with"
+            /></label>
+            <label class="mp-field"
+              >Repository URL<input
+                name="repository"
+                type="url"
+                required
+                placeholder="https://github.com/your-organisation/your-pack"
+                autocomplete="off"
+            /></label>
+            <div class="mp-field-row">
+              <label class="mp-field"
+                >Pack type<select
+                  name="packType"
+                  aria-label="Pack type"
+                  required
+                >
+                  <option value="">Choose a type</option>
+                  <option>Registry starter</option>
+                  <option>Adapter integration</option>
+                  <option>Evidence recipe</option>
+                  <option>Example project</option>
+                </select></label
+              ><label class="mp-field"
+                >Licence<select name="licence" aria-label="Licence" required>
+                  <option value="">Choose a licence</option>
+                  <option>Apache 2.0</option>
+                  <option>MIT</option>
+                  <option>CC BY 4.0</option>
+                  <option>Another licence</option>
+                </select></label
+              >
+            </div>
+            <label class="mp-field"
+              >What does it help someone do?<textarea
+                name="summary"
+                required
+                maxlength="500"
+                placeholder="Describe the task, what is included, and the local setup."
+              ></textarea>
+            </label>
+            <label class="mp-check"
+              ><input name="rights" type="checkbox" required /><span
+                >I have the rights to share this pack under the stated
+                licence.</span
+              ></label
+            >
+            <div>
+              <button
+                type="button"
+                id="mp-preview-contribution"
+                class="mp-button mp-button-primary cursor-interaction"
+              >
+                Continue on GitHub <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <aside>
+          <p class="mp-eyebrow">How contributions work</p>
+          <ol class="mp-steps">
+            <li>
+              <div>
+                <strong>Prepare your pack</strong>
+                <p>
+                  Include a README, a licence, synthetic examples, and the
+                  relevant product checks.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Submit for review</strong>
+                <p>
+                  We review the scope, contents, compatibility information, and
+                  maintenance owner.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Publish with credit</strong>
+                <p>
+                  Your listing links to you, your organisation, and the source
+                  repository.
+                </p>
+              </div>
+            </li>
+          </ol>
+          <div class="mp-note">
+            <h3>Small contributions count.</h3>
+            <p>
+              A clearer example or a documented compatibility finding can be as
+              useful as a complete pack.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  <dialog id="mp-preview-dialog" aria-labelledby="mp-dialog-title">
+    <div class="mp-dialog-head">
+      <h2 id="mp-dialog-title"></h2>
+      <button
+        class="mp-close cursor-interaction"
+        type="button"
+        data-close
+        aria-label="Close dialog"
+      >
+        ×
+      </button>
+    </div>
+    <div class="mp-dialog-body" id="mp-dialog-content"></div>
+    <div class="mp-dialog-actions" id="mp-dialog-actions"></div>
+  </dialog>
+<script type="application/json" id="contribution-packs" set:html={JSON.stringify(packs.map(({id,title,source})=>({id,title,source}))).replaceAll('<','\u003c')}/><script>import '../scripts/contribute.js';</script></Base>

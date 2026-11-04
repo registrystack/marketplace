@@ -1,0 +1,163 @@
+[
+  {
+    "id": "professional-licensing",
+    "type": "starter",
+    "kind": "Registry starter",
+    "title": "Professional licensing",
+    "summary": "A register of professional licences, their terms, suspensions and revocations, as already decided by the licensing authority.",
+    "art": "Licence → Licence term",
+    "model": ["Licence", "Licence term"],
+    "overview": "Use the model to explore how your office records professional licences and the decisions already made about them. Adapt the records, permitted changes, and access profiles to your authority's rules.",
+    "local": [
+      "Your authority and jurisdiction",
+      "Your rules and access assignments",
+      "Runtime configuration and deployment"
+    ],
+    "reference": "Base Registry Engine 0.44.0 catalogue",
+    "referenceNote": "The current Studio checker pin refuses this starter until its date rules declare a timezone.",
+    "source": "https://github.com/registrystack/registry-stack",
+    "format": "Starter archive",
+    "licence": "Apache 2.0 + CC BY 4.0",
+    "cardTask": "Record licences and regulatory decisions.",
+    "cardDescription": "A model for licences, their terms, suspensions, and revocations. Adapt it to your licensing authority."
+  },
+  {
+    "id": "health-facilities",
+    "type": "starter",
+    "kind": "Registry starter",
+    "title": "Health facilities and care provider registration",
+    "summary": "A register of health providers, the facilities each operates, and the operating authorization each facility has been issued.",
+    "art": "Providers · facilities",
+    "model": ["Health providers", "Facilities", "Operating authorization"],
+    "overview": "Start with a model linking providers, their facilities, and issued operating authorizations. Review it with the people responsible for the register, then adapt it to your local requirements.",
+    "local": [
+      "Your authority and jurisdiction",
+      "Your facility and provider rules",
+      "Runtime configuration and deployment"
+    ],
+    "reference": "Base Registry Engine 0.44.0 catalogue",
+    "referenceNote": "The current Studio checker pin refuses this starter until its date rules declare a timezone.",
+    "source": "https://github.com/registrystack/registry-stack",
+    "format": "Starter archive",
+    "licence": "Apache 2.0 + CC BY 4.0",
+    "cardTask": "Record providers and their facilities.",
+    "cardDescription": "A model linking care providers, their facilities, and issued operating authorizations."
+  },
+  {
+    "id": "farmer-registry",
+    "type": "starter",
+    "kind": "Registry starter",
+    "title": "Farmer registry and agricultural holdings",
+    "summary": "A register of farms and of the persons, organizations or groups registered as the farmer of each, for a stated purpose.",
+    "art": "Farms · farmers",
+    "model": ["Farms", "Registered farmers"],
+    "overview": "Explore the register's model of farms and the people, organisations, or groups registered as their farmers. Your team defines the purpose and adapts the model to the register it maintains.",
+    "local": [
+      "The registration purpose and authority",
+      "Your local record and access rules",
+      "Runtime configuration and deployment"
+    ],
+    "reference": "Base Registry Engine 0.44.0 catalogue",
+    "referenceNote": "Run the matching product checks on the generated project. Catalogue inclusion does not establish an end-to-end service.",
+    "source": "https://github.com/registrystack/registry-stack",
+    "format": "Starter archive",
+    "licence": "Apache 2.0 + CC BY 4.0",
+    "cardTask": "Record farms and their registered farmers.",
+    "cardDescription": "A model linking farms to the people, organisations, or groups registered as their farmers."
+  },
+  {
+    "id": "dhis2-tracker",
+    "type": "evidence",
+    "kind": "Evidence source recipe",
+    "title": "DHIS2 Tracker",
+    "summary": "A reusable starting point for a tracked-entity lookup, with bounded ambiguity detection and a configured status attribute.",
+    "art": "DHIS2 Tracker → Evidence",
+    "model": [
+      "Existing system",
+      "Source connection",
+      "Your fact-check project"
+    ],
+    "overview": "Connect a Registry Stack Evidence project to a defined lookup in DHIS2 Tracker. The download supplies the connection files. Your team defines which fact to establish, which information may be disclosed, and who may request it.",
+    "local": [
+      "Your exact DHIS2 identifiers and connection",
+      "The assertion meaning and disclosure rules",
+      "Credentials, grants, and deployment bindings"
+    ],
+    "reference": "DHIS2 Tracker 2.43 reference API shape",
+    "referenceNote": "Sanitized reference fixtures describe a bounded lookup. Check it read-only against your exact provider deployment.",
+    "source": "https://github.com/registrystack/registry-stack/tree/main/products/evidence/source-recipes/dhis2-tracker",
+    "format": "Source export",
+    "licence": "Apache 2.0",
+    "cardTask": "Look up a tracked entity for a fact check.",
+    "cardDescription": "Source connection files for Registry Stack Evidence. Your team defines the fact to establish and the access rules."
+  },
+  {
+    "id": "opencrvs-event-search",
+    "type": "evidence",
+    "kind": "Evidence source recipe",
+    "title": "OpenCRVS event search",
+    "summary": "A source recipe for the OpenCRVS event-search response shape, with a pinned Adapter pack and a thin Evidence binding.",
+    "art": "Event search → Evidence",
+    "model": [
+      "Existing system",
+      "Source connection",
+      "Your fact-check project"
+    ],
+    "overview": "Connect a Registry Stack Evidence project to an event lookup in OpenCRVS. The download supplies the connection files. Your team defines which fact to establish, which information may be disclosed, and who may request it.",
+    "local": [
+      "Your exact OpenCRVS deployment and identifiers",
+      "The assertion meaning and disclosure rules",
+      "Credentials, grants, and deployment bindings"
+    ],
+    "reference": "OpenCRVS v2 /events/search reference shape",
+    "referenceNote": "Reference exchanges do not establish compatibility with every OpenCRVS release or deployment.",
+    "source": "https://github.com/registrystack/registry-stack/tree/main/products/evidence/source-recipes/opencrvs-event-search",
+    "format": "Source export",
+    "licence": "Apache 2.0",
+    "cardTask": "Look up an event for a fact check.",
+    "cardDescription": "Source connection files for event lookups in Registry Stack Evidence. Your team defines the fact to establish."
+  },
+  {
+    "id": "odk-central",
+    "type": "integration",
+    "kind": "Adapter integration",
+    "title": "ODK Central",
+    "summary": "An OData ingestion starting point that reads a bounded page of submissions or repeat rows per run.",
+    "art": "Submissions → ingestion",
+    "model": ["ODK submissions", "Adapter pack", "Ingestion job"],
+    "overview": "Use the pack as a starting point for bounded, read-only acquisition from ODK Central. The pack returns item identity, revision, and value for an explicitly configured ingestion job.",
+    "local": [
+      "Your project, form, and OData source",
+      "A destination and ingestion job",
+      "TLS, credentials, and deployment configuration"
+    ],
+    "reference": "Documentation-derived OData integration",
+    "referenceNote": "Synthetic fixtures only. Not exercised against an ODK Central server. Basic authentication over TLS; session-token credentials are not supported.",
+    "source": "https://github.com/registrystack/registry-stack/tree/main/products/adapter/packs/odk-central",
+    "format": "Adapter pack",
+    "licence": "Apache 2.0",
+    "cardTask": "Read form submissions from ODK Central.",
+    "cardDescription": "Connection code for reading submissions or repeat rows. Your team configures the destination."
+  },
+  {
+    "id": "licensing-service",
+    "type": "planned",
+    "kind": "Planned service kit",
+    "title": "Professional licensing service kit",
+    "summary": "A proposed kit combining registry, human review, and Evidence projects for a professional-licensing service.",
+    "art": "Registry · review · Evidence",
+    "model": ["Registry", "Human review", "Evidence"],
+    "overview": "We are exploring a more complete, maintained starting point that brings related product projects and example journeys together. Scope, support, licensing, and pricing are still to be defined.",
+    "local": [
+      "Your licensing law and service process",
+      "Your authority and access rules",
+      "Local integrations and deployment acceptance"
+    ],
+    "reference": "Planned offering",
+    "referenceNote": "No downloadable kit or supported runtime combination is available from this proposed listing.",
+    "source": "https://registrystack.org/",
+    "format": "To be defined",
+    "licence": "To be confirmed",
+    "paid": true
+  }
+]

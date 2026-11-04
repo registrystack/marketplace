@@ -1,0 +1,8 @@
+---
+import { collections } from '../lib/catalogue.mjs';
+const { compact = false } = Astro.props;
+---
+{compact ? <nav class="mp-collection-browse" aria-label="Browse starters by service area"><p>Or browse starters by service area:</p><div>{collections.map(collection => <a href={`/collections/${collection.key}/`}>{collection.title} →</a>)}</div></nav> : <section class="mp-wrap mp-section" aria-labelledby="mp-collections-title">
+  <div class="mp-section-head"><div><h2 id="mp-collections-title">Explore by service area.</h2><p>Collections bring related registry starters together. Start with the area your institution works in.</p></div></div>
+  <div class="mp-collection-grid">{collections.map(collection => <a class="mp-collection-card" href={`/collections/${collection.key}/`}><strong>{collection.title}</strong><span>{collection.starterIds.length} free starters <span aria-hidden="true">→</span></span></a>)}</div>
+</section>}

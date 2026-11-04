@@ -1,0 +1,12 @@
+dist/
+node_modules/
+.DS_Store
+test-results/
+
+.astro/
+content/downloads/
+.prototype/
+
+.env
+.env.*
+!.env.example

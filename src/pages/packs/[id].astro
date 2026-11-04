@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import PackRequestDialog from '../../components/PackRequestDialog.astro';
+import StarterDetails from '../../components/StarterDetails.astro';
+import PackOverview from '../../components/PackOverview.astro';
+import { packs, collections } from '../../lib/catalogue.mjs';
+import { categoryFor, renderCategoryIcon, renderPublicSchemaBadge } from '../../catalogue.js';
+export function getStaticPaths() { return packs.map(pack => ({ params: { id: pack.id }, props: { pack } })); }
+const { pack } = Astro.props;
+const category = categoryFor(pack);
+const related = collections.filter(collection => collection.starterIds.includes(pack.id));
+---
+<Base title={pack.title} description={pack.summary} screen="pack">
+<section class="mp-view" data-screen="pack"><div class="mp-detail-top"><div class="mp-wrap"><div class="mp-breadcrumb"><a href="/">Marketplace</a><span aria-hidden="true">/</span><span>{category?.label || pack.kind}</span></div><div class="mp-detail-grid"><div class="mp-detail-title"><span class:list={['mp-badge', { 'mp-badge-neutral': pack.paid }]}>{pack.paid ? 'Paid pack · Coming soon' : 'Free · ' + category.label}</span><div class="mp-pack-category" data-pack-category data-category={category?.id}><Fragment set:html={renderCategoryIcon(pack.type)}/><p class="mp-pack-purpose">{category?.purpose || 'Planned service kit.'}</p></div><Fragment set:html={renderPublicSchemaBadge(pack, "#publicschema-attribution")}/><h1 id="starter-title">{pack.title}</h1><p class="mp-detail-summary">{pack.cardDescription || pack.summary}</p><div class="mp-byline"><span class="mp-avatar" aria-hidden="true">RS</span><span>Maintained by Registry Stack<br/>{category?.label || pack.kind}</span></div>{related.map(collection => <p><a href={`/collections/${collection.key}/`}>In {collection.title} →</a></p>)}</div>
+<aside class="mp-acquire" aria-label="Get this pack"><p class="mp-price">{pack.paid ? 'Coming soon' : 'Free on request'}</p><small>{pack.paid ? 'Pricing and availability to be confirmed.' : 'Request access to review the source locally. Access is free on request. You can request without accepting tracking.'}</small><p class="mp-acquire-note">{!pack.paid && "A short request form opens. We’ll review your request and share access."}</p>{pack.download && <div id="mp-free-actions"><a class="mp-button mp-button-primary" href={pack.requestHref} data-request-access data-marketplace-action="download_intent" data-pack-id={pack.id} data-pack-type={pack.type}>Download pack ↓</a>{pack.type === 'starter' ? <a class="mp-button" href={`/studio/${pack.id}/`} data-studio data-marketplace-action="studio_instructions" data-pack-id={pack.id} data-pack-type={pack.type}>Use in Studio ↗</a> : <><a class="mp-button" href={`/studio/${pack.id}/`}>Native tooling instructions</a><small>Studio import coming soon</small></>}</div>}<dl><div><dt>Licence</dt><dd>{pack.licence}</dd></div><div><dt>Maintainer</dt><dd>Registry Stack</dd></div><div><dt>Format</dt><dd>{pack.format}</dd></div></dl>{pack.download && <details class="mp-checksum"><summary>Download integrity</summary><p>SHA-256</p><code>{pack.download.sha256}</code><p>{pack.download.bytes.toLocaleString('en-US')} bytes</p>{pack.download.packagingNotes && <p>{pack.download.packagingNotes}</p>}</details>}</aside></div></div></div>
+<div class:list={['mp-wrap', 'mp-detail-layout', { 'mp-has-rail': pack.native }]}>
+  {pack.native && (
+    <aside class="mp-page-rail">
+      <nav aria-label="On this page">
+        <p class="mp-eyebrow">In this starter</p>
+        <a href="#overview-title"><span>01</span> Overview</a>
+        <a href="#records-title"><span>02</span> Records and fields</a>
+        <a href="#actions-title"><span>03</span> Permitted changes</a>
+        <a href="#access-title"><span>04</span> Who can do what</a>
+        <a href="#whats-inside"><span>05</span> Files and setup</a>
+        <a href="#compatibility-title"><span>06</span> Compatibility</a>
+      </nav>
+    </aside>
+  )}
+  <div class="mp-detail-main">
+    <PackOverview pack={pack} category={category}/>
+    {pack.native ? <StarterDetails starter={pack.native}/> : (
+      <section class="mp-detail-section" id="whats-inside">
+        <header class="mp-section-heading"><p class="mp-eyebrow">Contents</p><h2>What’s inside.</h2></header>
+        <p>{pack.download?.nativeUse || 'Related product projects, example journeys, and maintenance information are proposed. There is no paid release to download or buy yet.'}</p>
+      </section>
+    )}
+    <section class="mp-detail-section" aria-labelledby="compatibility-title">
+      <header class="mp-section-heading"><p class="mp-eyebrow">Before you start</p><h2 id="compatibility-title">Compatibility.</h2></header>
+      <div class="mp-compatibility-note">
+        <p class="mp-compatibility-reference">{pack.reference}</p>
+        <p>{pack.referenceNote}</p>
+        <a href={pack.source} data-marketplace-action="source_documentation" data-pack-id={pack.id} target="_blank" rel="noopener noreferrer">Read the source documentation ↗</a>
+      </div>
+    </section>
+    <section class="mp-pack-community">
+      <div><p class="mp-eyebrow">Community</p><h2>Help the next team.</h2><p>Share a correction, a compatibility finding, or your adaptation. Contributions are reviewed and credited.</p></div>
+      <a class="mp-button" href={`/contribute/?basedOn=${pack.id}`} data-marketplace-action="contribute" data-pack-id={pack.id} data-pack-type={pack.type}>Prepare a contribution →</a>
+    </section>
+  </div>
+</div>
+</section>
+{!pack.paid && <PackRequestDialog pack={pack}/>}
+</Base>

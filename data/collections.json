@@ -1,0 +1,166 @@
+[
+  {
+    "key": "licensing",
+    "title": "Licensing and professional registers",
+    "description": "Connect licensing applications, decisions, licence records and renewals, with controlled checks by employers and other services.",
+    "intent": "Connect applications, decisions, licence records and renewal",
+    "starterIds": [
+      "driver-licensing",
+      "firearms-possessors",
+      "hunter-register",
+      "immigration-sponsor-licences",
+      "premises-licences",
+      "professional-licensing",
+      "rented-housing-registration",
+      "road-transport-licensing"
+    ],
+    "featuredStarter": "professional-licensing",
+    "openFirst": [],
+    "mainSiteUrl": "https://registrystack.org/solutions/licensing/"
+  },
+  {
+    "key": "business-and-tax",
+    "title": "Business, tax and finance registers",
+    "description": "Record business and taxpayer registrations, review changes and let approved services check registration status.",
+    "intent": "Record business registrations and changes, and let approved services check their status",
+    "starterIds": [
+      "bank-account-register",
+      "beneficial-ownership",
+      "business-register",
+      "central-credit-register",
+      "collateral-interests",
+      "customs-trader-authorisations",
+      "energy-provider-registrations",
+      "financial-services-register",
+      "industrial-property-rights",
+      "insolvency-and-inhibitions",
+      "public-disclosure-filings",
+      "public-funding-state-aid",
+      "representation-mandates",
+      "statistical-business-register",
+      "statutory-organization-listings",
+      "supplier-prequalification",
+      "taxpayer-registration",
+      "trade-authorizations"
+    ],
+    "featuredStarter": "business-register",
+    "openFirst": [],
+    "mainSiteUrl": "https://registrystack.org/solutions/business-and-tax/"
+  },
+  {
+    "key": "people-and-social-programmes",
+    "title": "People, households and social programmes",
+    "description": "Maintain people, identity, household, enrollment and status records. Review corrections and let authorized services check specific information.",
+    "intent": "Maintain identity, household, enrollment and status records for public services",
+    "starterIds": [
+      "alerts-watchlist",
+      "contact-preferences",
+      "criminal-records",
+      "diplomatic-accreditation",
+      "education-institutions",
+      "identity-documents",
+      "immigration-status",
+      "learner-records",
+      "population-register",
+      "qualification-specifications",
+      "social-insurance-contributors",
+      "social-registry",
+      "voter-registration"
+    ],
+    "featuredStarter": null,
+    "openFirst": [
+      "population-register",
+      "social-registry"
+    ],
+    "mainSiteUrl": "https://registrystack.org/solutions/people-and-social-programmes/"
+  },
+  {
+    "key": "land-property-and-assets",
+    "title": "Land, property, vehicles and places",
+    "description": "Maintain records of parcels, buildings, vehicles, vessels and their holders or rights, with a history of changes.",
+    "intent": "Record assets, their holders and rights, and the history of changes",
+    "starterIds": [
+      "address-building-register",
+      "aircraft-register",
+      "aviation-obstacles",
+      "energy-performance-certificates",
+      "land-environmental-designations",
+      "land-parcels",
+      "mining-cadastre",
+      "planning-register",
+      "property-valuations",
+      "public-transport-stops",
+      "railway-registers",
+      "reservoirs",
+      "ship-register",
+      "spectrum-assignments",
+      "vehicle-titles"
+    ],
+    "featuredStarter": "land-parcels",
+    "openFirst": [],
+    "mainSiteUrl": "https://registrystack.org/solutions/land-property-and-assets/"
+  },
+  {
+    "key": "agriculture-food-and-environment",
+    "title": "Agriculture, animals, food and environment",
+    "description": "Register producers, sites, food businesses, permits and natural resources. Record changes and let approved services check their status.",
+    "intent": "Register producers, sites, establishments, permits and resources",
+    "starterIds": [
+      "animal-breeding-organisations",
+      "animal-health-status",
+      "aquaculture-register",
+      "companion-animals",
+      "emas-register",
+      "environmental-enforcement",
+      "environmental-permits",
+      "farmer-registry",
+      "food-business-establishments",
+      "food-feed-authorisations",
+      "forestry-register",
+      "guarantees-of-origin",
+      "livestock-movement",
+      "plant-protection-products",
+      "seed-certification",
+      "water-bodies-and-monitoring-sites"
+    ],
+    "featuredStarter": "farmer-registry",
+    "openFirst": [],
+    "mainSiteUrl": "https://registrystack.org/solutions/agriculture-food-and-environment/"
+  },
+  {
+    "key": "health-and-safety",
+    "title": "Health, safety and regulated products",
+    "description": "Maintain facility, trial, device, operator and hazard records. Record decisions and let approved services check their status.",
+    "intent": "Maintain facility, operator, product and hazard records",
+    "starterIds": [
+      "clinical-trials",
+      "cooling-towers",
+      "donation-preferences-directives",
+      "health-facilities",
+      "medical-device-actors-certificates",
+      "medicine-shortages",
+      "pharmaceutical-operator-licensing",
+      "radiation-protection"
+    ],
+    "featuredStarter": "health-facilities",
+    "openFirst": [],
+    "mainSiteUrl": "https://registrystack.org/solutions/health-and-safety/"
+  },
+  {
+    "key": "reference-registers",
+    "title": "Public bodies, reference lists and catalogues",
+    "description": "Maintain the code lists, place names and public-body directories that other registers and services rely on.",
+    "intent": "Maintain shared classifications, directories and reference data",
+    "starterIds": [
+      "administrative-metadata-catalogue",
+      "geographic-reference",
+      "public-organizations",
+      "registered-legal-instruments",
+      "tax-regime-catalogue",
+      "trusted-lists"
+    ],
+    "featuredStarter": "geographic-reference",
+    "openFirst": [],
+    "mainSiteUrl": "https://registrystack.org/solutions/reference-registers/"
+  }
+]

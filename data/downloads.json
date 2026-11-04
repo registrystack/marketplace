@@ -1,0 +1,2056 @@
+{
+  "animal-health-status": {
+    "kind": "starter",
+    "assetPath": "content/downloads/animal-health-status-starter.zip",
+    "sha256": "8887a38a679cc03f63921357b7b47477a22e224246a3630a4bf12d95e01a6692",
+    "bytes": 90204,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow animal-health-status-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "companion-animals": {
+    "kind": "starter",
+    "assetPath": "content/downloads/companion-animals-starter.zip",
+    "sha256": "e021aad7c784bbbbdec087a57ee6e4e8c6ae5f5e2e5d5a8252343716b2760c24",
+    "bytes": 115108,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow companion-animals-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "emas-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/emas-register-starter.zip",
+    "sha256": "4eda3394ca360475c63fbc96e5b1dcd6833ee4b41a37c522239b93bdd2383458",
+    "bytes": 80594,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow emas-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "identity-documents": {
+    "kind": "starter",
+    "assetPath": "content/downloads/identity-documents-starter.zip",
+    "sha256": "ab5132d254ec76a455a2ced116745d9bd593925815895a1365b219f1026f8801",
+    "bytes": 53552,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow identity-documents-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "supplier-prequalification": {
+    "kind": "starter",
+    "assetPath": "content/downloads/supplier-prequalification-starter.zip",
+    "sha256": "891d4ce0db43231fd97153a5c6e408d6c21e282f800168742e5a584c326e0460",
+    "bytes": 117963,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow supplier-prequalification-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "taxpayer-registration": {
+    "kind": "starter",
+    "assetPath": "content/downloads/taxpayer-registration-starter.zip",
+    "sha256": "469327bae2de12c29602bbc1c0888fc58648049c2c4410061add17b94dd285fe",
+    "bytes": 45692,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow taxpayer-registration-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "rented-housing-registration": {
+    "kind": "starter",
+    "assetPath": "content/downloads/rented-housing-registration-starter.zip",
+    "sha256": "c7f6dcaaaab5595b54e7c47072d3355f6f2bc8dcb1d731290d309ea80741e66f",
+    "bytes": 92452,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow rented-housing-registration-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "statutory-organization-listings": {
+    "kind": "starter",
+    "assetPath": "content/downloads/statutory-organization-listings-starter.zip",
+    "sha256": "907ced93a2f2737574e34f261985d80c0578a3c562e92600fc91c9b86969e7e1",
+    "bytes": 46581,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow statutory-organization-listings-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "animal-breeding-organisations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/animal-breeding-organisations-starter.zip",
+    "sha256": "dd86fda1edbe9ea8836dca1a2d8f3fa36983cea473a3abebb9aecf8317721b6b",
+    "bytes": 49288,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow animal-breeding-organisations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "driver-licensing": {
+    "kind": "starter",
+    "assetPath": "content/downloads/driver-licensing-starter.zip",
+    "sha256": "65bb4b40f50564582832b401d33b0af4f1fda0f1cbd9d8be59c500bdde74cb64",
+    "bytes": 58622,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow driver-licensing-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "contact-preferences": {
+    "kind": "starter",
+    "assetPath": "content/downloads/contact-preferences-starter.zip",
+    "sha256": "c338db43a89639393a6854fe6076e7e5ed687ba7dce7e460da557d47b02a507f",
+    "bytes": 77735,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow contact-preferences-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "energy-provider-registrations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/energy-provider-registrations-starter.zip",
+    "sha256": "9852f1711dac86af259fa6cbf6ff47730c12f4f5992d72023ee70c6971c4bcd4",
+    "bytes": 47774,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow energy-provider-registrations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "learner-records": {
+    "kind": "starter",
+    "assetPath": "content/downloads/learner-records-starter.zip",
+    "sha256": "695e6e1c7cc4a0ac7ccf2e8bd844111558290e9b7977faf0b49fbd8ed17c69c7",
+    "bytes": 89384,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow learner-records-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "medical-device-actors-certificates": {
+    "kind": "starter",
+    "assetPath": "content/downloads/medical-device-actors-certificates-starter.zip",
+    "sha256": "3bbeb9ad92bf9b33b8d007198cc679544ec3e15ca5337867d37a4305a7f90048",
+    "bytes": 68109,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow medical-device-actors-certificates-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "public-funding-state-aid": {
+    "kind": "starter",
+    "assetPath": "content/downloads/public-funding-state-aid-starter.zip",
+    "sha256": "19c3702d93a8432a900042c47e5636c2d93bc24113f77668711e86885e83f047",
+    "bytes": 73718,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow public-funding-state-aid-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "public-organizations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/public-organizations-starter.zip",
+    "sha256": "678f1c7a2cb35d0c32c90c59d9c90694517a74c14aae6ad31b294f08ebb3105f",
+    "bytes": 42407,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow public-organizations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "aircraft-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/aircraft-register-starter.zip",
+    "sha256": "16573cf3bf8b0dcabc02e639e183492b0aa76ea2a13af95f08eed85d52028cd0",
+    "bytes": 33426,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow aircraft-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "bank-account-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/bank-account-register-starter.zip",
+    "sha256": "a61921e9c70e5397dfec46ac013f8bb165ad9f1eee9943a2ced06190f9e57a3b",
+    "bytes": 47374,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow bank-account-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "central-credit-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/central-credit-register-starter.zip",
+    "sha256": "c3d11bc0d90b038a22fb057dbd5c8f74a2d8641f1e210de9cb41c5d030760e83",
+    "bytes": 37662,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow central-credit-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "clinical-trials": {
+    "kind": "starter",
+    "assetPath": "content/downloads/clinical-trials-starter.zip",
+    "sha256": "2fcdd5a988447ec7c9b46e1895c112ea46810f1e7419a8aae3d6b1b1fc96d5a8",
+    "bytes": 36505,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow clinical-trials-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "cooling-towers": {
+    "kind": "starter",
+    "assetPath": "content/downloads/cooling-towers-starter.zip",
+    "sha256": "fb300f83a451c5fbd5e36eb59b7bc3eb865c9aad7a70b3204e2085b1f228af06",
+    "bytes": 32492,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow cooling-towers-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "criminal-records": {
+    "kind": "starter",
+    "assetPath": "content/downloads/criminal-records-starter.zip",
+    "sha256": "e9dada6f52834f3bf60afa2beb6de075e912687ea754fd4f2351040ff644bbec",
+    "bytes": 47402,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow criminal-records-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "diplomatic-accreditation": {
+    "kind": "starter",
+    "assetPath": "content/downloads/diplomatic-accreditation-starter.zip",
+    "sha256": "552ae69be3b22c78e2c246944319a1d9856ffbd0dece259052aca0ba0852e1fc",
+    "bytes": 56560,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow diplomatic-accreditation-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "energy-performance-certificates": {
+    "kind": "starter",
+    "assetPath": "content/downloads/energy-performance-certificates-starter.zip",
+    "sha256": "1d449f717a8085d894276840dd2bdb7a7d17192b075766d09eca2994eedfdf93",
+    "bytes": 34798,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow energy-performance-certificates-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "environmental-enforcement": {
+    "kind": "starter",
+    "assetPath": "content/downloads/environmental-enforcement-starter.zip",
+    "sha256": "3f49a059a19b438efa54fbbd07090526709a39cd42257f5caf8f7259b8073532",
+    "bytes": 35297,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow environmental-enforcement-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "hunter-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/hunter-register-starter.zip",
+    "sha256": "35c9685d725f7e4049a88bdc419cd83828aedb140f6383b7b0b47cb7a0a7f524",
+    "bytes": 57006,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow hunter-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "immigration-sponsor-licences": {
+    "kind": "starter",
+    "assetPath": "content/downloads/immigration-sponsor-licences-starter.zip",
+    "sha256": "d10b9b44b332ad1255480b5d148fedd7dc9730b886db0dea29e20a9a8caaadb7",
+    "bytes": 56628,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow immigration-sponsor-licences-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "medicine-shortages": {
+    "kind": "starter",
+    "assetPath": "content/downloads/medicine-shortages-starter.zip",
+    "sha256": "5d8548856c28dccc9ff976b14199caf33f9c62dcb5ca0c239e9531f91b81f5d3",
+    "bytes": 84305,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow medicine-shortages-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "mining-cadastre": {
+    "kind": "starter",
+    "assetPath": "content/downloads/mining-cadastre-starter.zip",
+    "sha256": "4771af9e5c6bae498fa6e1bc410a736a70e7d52ef7a4b5370136b2291142fbca",
+    "bytes": 42397,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow mining-cadastre-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "property-valuations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/property-valuations-starter.zip",
+    "sha256": "11258d88d499720a6b3a45bb87fe2c0bfaf05d1c965f210f69d511b6f01c3b63",
+    "bytes": 33845,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow property-valuations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "public-transport-stops": {
+    "kind": "starter",
+    "assetPath": "content/downloads/public-transport-stops-starter.zip",
+    "sha256": "84026682bb04432a2a883459ab4904d228f114bac25e8af8b25ce1311580a38f",
+    "bytes": 67113,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow public-transport-stops-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "representation-mandates": {
+    "kind": "starter",
+    "assetPath": "content/downloads/representation-mandates-starter.zip",
+    "sha256": "130934fd34d0787d07f0929279fb6530f6819fe1f0ed6a4c368482f020d0d6ad",
+    "bytes": 101366,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow representation-mandates-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "tax-regime-catalogue": {
+    "kind": "starter",
+    "assetPath": "content/downloads/tax-regime-catalogue-starter.zip",
+    "sha256": "163ce757c1684ff3a083f48f6f50d2f9a92d72cf05cf8047cff0912bf5917cb3",
+    "bytes": 35124,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow tax-regime-catalogue-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "trusted-lists": {
+    "kind": "starter",
+    "assetPath": "content/downloads/trusted-lists-starter.zip",
+    "sha256": "b61c47de83ec1bf8aeb8d1e4078d849b8eca42d32172f7882cd41b10ae405ffd",
+    "bytes": 55026,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow trusted-lists-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "professional-licensing": {
+    "kind": "starter",
+    "assetPath": "content/downloads/professional-licensing-starter.zip",
+    "sha256": "6469bc70f9347fe8d8d50289703d4fb2870da2d40918b41c50e48d04477a9a47",
+    "bytes": 444925,
+    "upstreamSha256": "e2bc22159becb5495350922ef3528e26d359a4a7388b95769811e93c839c2e90",
+    "packagingNotes": "Public marketplace derivative: one README link to a private starter catalogue was replaced by a non-linked Registry Stack starter catalogue reference. The other 30 archive members retain their upstream bytes.",
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow professional-licensing-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "land-parcels": {
+    "kind": "starter",
+    "assetPath": "content/downloads/land-parcels-starter.zip",
+    "sha256": "7f73ac4cb3bd86653b651970c00bc9994b1e8dccdf17b7ce25fe08ce72bb0e6d",
+    "bytes": 104063,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow land-parcels-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "farmer-registry": {
+    "kind": "starter",
+    "assetPath": "content/downloads/farmer-registry-starter.zip",
+    "sha256": "a991ab298863c0c59a4445dc4ccb684fb9b7ecd4cb4755748ccb44d262b4216b",
+    "bytes": 90870,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow farmer-registry-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "social-insurance-contributors": {
+    "kind": "starter",
+    "assetPath": "content/downloads/social-insurance-contributors-starter.zip",
+    "sha256": "fb6b3d91f1907460641b2817546848cbbfcd061c32155b2a67889921a04fa35f",
+    "bytes": 76411,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow social-insurance-contributors-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "beneficial-ownership": {
+    "kind": "starter",
+    "assetPath": "content/downloads/beneficial-ownership-starter.zip",
+    "sha256": "4706501dd2c342b40d74b341a9b9d8b5002cde29ababd9c550d1398e81302533",
+    "bytes": 72720,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow beneficial-ownership-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "livestock-movement": {
+    "kind": "starter",
+    "assetPath": "content/downloads/livestock-movement-starter.zip",
+    "sha256": "0c2799c3fc88c883b0b7d49a7bba99975608299e1d103e89ea11e0bea8ff6d6b",
+    "bytes": 58779,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow livestock-movement-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "seed-certification": {
+    "kind": "starter",
+    "assetPath": "content/downloads/seed-certification-starter.zip",
+    "sha256": "e71c8b9b272b43f367e966146727b946a968be8fc8f85ceac5f923a9bc4e0134",
+    "bytes": 70779,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow seed-certification-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "voter-registration": {
+    "kind": "starter",
+    "assetPath": "content/downloads/voter-registration-starter.zip",
+    "sha256": "6132268187b0d9af6daa2502274b9ca00f0d9229b014da76d128633c2612633b",
+    "bytes": 58586,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow voter-registration-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "customs-trader-authorisations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/customs-trader-authorisations-starter.zip",
+    "sha256": "eda2d9759f865138927fb5efdc4e2fe6cb00ab9bc5ba119d5520bb20c7c3c320",
+    "bytes": 77257,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow customs-trader-authorisations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "immigration-status": {
+    "kind": "starter",
+    "assetPath": "content/downloads/immigration-status-starter.zip",
+    "sha256": "1d7b566dcd1f5b6cc955dfdf974dbd7c692020043d501c83404413b82c478b22",
+    "bytes": 80717,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow immigration-status-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "alerts-watchlist": {
+    "kind": "starter",
+    "assetPath": "content/downloads/alerts-watchlist-starter.zip",
+    "sha256": "c931831bf15bae6c5bf4f5d862e828b29547eb28f09a289fdc12f4f4c5ea7c29",
+    "bytes": 47932,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow alerts-watchlist-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "population-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/population-register-starter.zip",
+    "sha256": "a8829e218cc1a8f898fb1a3563d82c6d64b39359dfcb186748a111d019d3256d",
+    "bytes": 49906,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow population-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "pharmaceutical-operator-licensing": {
+    "kind": "starter",
+    "assetPath": "content/downloads/pharmaceutical-operator-licensing-starter.zip",
+    "sha256": "b7a3953a306c451616e304da406a4431e6a4eb199529c1904dfca48036c0de7c",
+    "bytes": 56710,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow pharmaceutical-operator-licensing-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "food-business-establishments": {
+    "kind": "starter",
+    "assetPath": "content/downloads/food-business-establishments-starter.zip",
+    "sha256": "2ab73441c140d1c12bb01ef45cf3ce8adc3773d3300b66a857d413cf4fb737d9",
+    "bytes": 54386,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow food-business-establishments-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "insolvency-and-inhibitions": {
+    "kind": "starter",
+    "assetPath": "content/downloads/insolvency-and-inhibitions-starter.zip",
+    "sha256": "b7d1f77a6d1776049c0de8f1e8fd6837934986680b24d8971d05d69842959247",
+    "bytes": 79149,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow insolvency-and-inhibitions-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "aviation-obstacles": {
+    "kind": "starter",
+    "assetPath": "content/downloads/aviation-obstacles-starter.zip",
+    "sha256": "0e7f5e6b1d6965314ac3d6fbda89397264f083a9f08770f0395877368eea8fa3",
+    "bytes": 34683,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow aviation-obstacles-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "guarantees-of-origin": {
+    "kind": "starter",
+    "assetPath": "content/downloads/guarantees-of-origin-starter.zip",
+    "sha256": "91dd26ed7dd9d84bf76bd000d98c281fd52107cb6dcff919342f6986d72560ed",
+    "bytes": 35289,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow guarantees-of-origin-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "reservoirs": {
+    "kind": "starter",
+    "assetPath": "content/downloads/reservoirs-starter.zip",
+    "sha256": "4c1facbc9b97a7c50edf941e7cd73285a53cd9cf15286e35b1de5c5944c3cc7a",
+    "bytes": 33921,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow reservoirs-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "ship-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/ship-register-starter.zip",
+    "sha256": "c79c1a77ebce6db17b696298aa96c423caa94fc3186820fe5e0ced090696ca73",
+    "bytes": 35434,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow ship-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "trade-authorizations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/trade-authorizations-starter.zip",
+    "sha256": "530ed805995ddcb1acd0b4b83fe035da5b52e217c4c0f4afd418c31c1b21aacf",
+    "bytes": 45623,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow trade-authorizations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "water-bodies-and-monitoring-sites": {
+    "kind": "starter",
+    "assetPath": "content/downloads/water-bodies-and-monitoring-sites-starter.zip",
+    "sha256": "94dde931ae09fb8c3883d2a340de71c9618d11b3d3f44ebd3dc8cb89349ed165",
+    "bytes": 104754,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow water-bodies-and-monitoring-sites-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "health-facilities": {
+    "kind": "starter",
+    "assetPath": "content/downloads/health-facilities-starter.zip",
+    "sha256": "7ca8ea12daaa23e7434b63b87004ab15e36bcfb06068292c0b79565d33d893c4",
+    "bytes": 189912,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow health-facilities-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "education-institutions": {
+    "kind": "starter",
+    "assetPath": "content/downloads/education-institutions-starter.zip",
+    "sha256": "e7cf7579454d4e51b88c575307d3175b2d4fcb781572f63664c5bb30b0f58d72",
+    "bytes": 95000,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow education-institutions-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "collateral-interests": {
+    "kind": "starter",
+    "assetPath": "content/downloads/collateral-interests-starter.zip",
+    "sha256": "9935cc1cb754adf9383c7d5adf8c087cbcc975dd50fc6879e3ad7f7b37582c31",
+    "bytes": 84963,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow collateral-interests-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "vehicle-titles": {
+    "kind": "starter",
+    "assetPath": "content/downloads/vehicle-titles-starter.zip",
+    "sha256": "7d2d697fc21cd13e5c85fbf2b13c1a55f02fb3deeee4d7dca805ababffcc822b",
+    "bytes": 34772,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow vehicle-titles-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "premises-licences": {
+    "kind": "starter",
+    "assetPath": "content/downloads/premises-licences-starter.zip",
+    "sha256": "f6eb08bb2ca5ebb91d005dedc49fef45483ba39fad2938406767e505e2ea2ada",
+    "bytes": 55100,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow premises-licences-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "land-environmental-designations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/land-environmental-designations-starter.zip",
+    "sha256": "c9f5490b4398230a75c97bc1518e01711f08a0f4585b80c7c61b3def4c66e01a",
+    "bytes": 34249,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow land-environmental-designations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "industrial-property-rights": {
+    "kind": "starter",
+    "assetPath": "content/downloads/industrial-property-rights-starter.zip",
+    "sha256": "e305bb2993229a3876331def89cba347e7f422407e185b314e4d68f02f111112",
+    "bytes": 59192,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow industrial-property-rights-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "public-disclosure-filings": {
+    "kind": "starter",
+    "assetPath": "content/downloads/public-disclosure-filings-starter.zip",
+    "sha256": "1c54f92f15d40594d41167bb3a8d7b664316a0c42b72c90a1924d983750d84f0",
+    "bytes": 72883,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow public-disclosure-filings-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "planning-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/planning-register-starter.zip",
+    "sha256": "99d7da5b97aa66652fb8774842c55934e0b00bab915ce7b065b82262171f48af",
+    "bytes": 71269,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow planning-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "registered-legal-instruments": {
+    "kind": "starter",
+    "assetPath": "content/downloads/registered-legal-instruments-starter.zip",
+    "sha256": "9fb890bae4a9132bb6dcef4884d68543d469d4a284dad21ce0f013655f286f51",
+    "bytes": 35042,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow registered-legal-instruments-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "road-transport-licensing": {
+    "kind": "starter",
+    "assetPath": "content/downloads/road-transport-licensing-starter.zip",
+    "sha256": "daef061ac00625e3528c5d5f51b1cce09bc9eb88fae172b82f3416a8a4092528",
+    "bytes": 48948,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow road-transport-licensing-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "address-building-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/address-building-register-starter.zip",
+    "sha256": "69cb8abdbbe6a5d7a72c1b4c5eb360ac1c037ebba7b4d69e7315e664b9611708",
+    "bytes": 33794,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow address-building-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "donation-preferences-directives": {
+    "kind": "starter",
+    "assetPath": "content/downloads/donation-preferences-directives-starter.zip",
+    "sha256": "5ad2cd3bd86cb7d663fe6945a92b94dacd5af0bfa8ecdc1563ceb4a2736e591d",
+    "bytes": 91667,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow donation-preferences-directives-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "qualification-specifications": {
+    "kind": "starter",
+    "assetPath": "content/downloads/qualification-specifications-starter.zip",
+    "sha256": "d12c62389ba95208324eaa2e984dcfa3a5cbbd8998863e4bd05786aa00bf28c4",
+    "bytes": 87100,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow qualification-specifications-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "spectrum-assignments": {
+    "kind": "starter",
+    "assetPath": "content/downloads/spectrum-assignments-starter.zip",
+    "sha256": "b38d5501ad6f4f8555dc6cf74e8dbbbb72d7d5040ba42c5069e93797890ad7dc",
+    "bytes": 58211,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow spectrum-assignments-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "administrative-metadata-catalogue": {
+    "kind": "starter",
+    "assetPath": "content/downloads/administrative-metadata-catalogue-starter.zip",
+    "sha256": "e4da3eb97fbca524092680909f81c292479ff6933a81ee86abb49f049477e205",
+    "bytes": 38257,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow administrative-metadata-catalogue-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "geographic-reference": {
+    "kind": "starter",
+    "assetPath": "content/downloads/geographic-reference-starter.zip",
+    "sha256": "6251b19b93c87148d654dc43ba7b4bd201b244a7776db5aad856bc18303899e4",
+    "bytes": 67959,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow geographic-reference-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "plant-protection-products": {
+    "kind": "starter",
+    "assetPath": "content/downloads/plant-protection-products-starter.zip",
+    "sha256": "56eeaa16fcf13c9c3aa68876e816f0818a3652d75332fa97f3e9eadb2f37d46c",
+    "bytes": 83935,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow plant-protection-products-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "firearms-possessors": {
+    "kind": "starter",
+    "assetPath": "content/downloads/firearms-possessors-starter.zip",
+    "sha256": "29ec25d82139928aaea6eefb88db0365065c0ec7f43bd58709036de4e928fb52",
+    "bytes": 46444,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow firearms-possessors-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "statistical-business-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/statistical-business-register-starter.zip",
+    "sha256": "6d263adb5d61eb6688d1f9bb54cdee0e99a3d8692236be6412eeb468b639fe6b",
+    "bytes": 43762,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow statistical-business-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "social-registry": {
+    "kind": "starter",
+    "assetPath": "content/downloads/social-registry-starter.zip",
+    "sha256": "b019128256277bc2ad7ad8be4af99995933bacb22ede327e1db002cecc6fa149",
+    "bytes": 34435,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow social-registry-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "business-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/business-register-starter.zip",
+    "sha256": "8f3646d755d04517d6d7cd51d9d56950f5cb30fa34632e8dfed6d5f9c29d8ad6",
+    "bytes": 133956,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow business-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "radiation-protection": {
+    "kind": "starter",
+    "assetPath": "content/downloads/radiation-protection-starter.zip",
+    "sha256": "3daadc888b5f812a7513aba44d2bdb8f0ad40c46735a71160c2cfa74c4419ecf",
+    "bytes": 70908,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow radiation-protection-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "railway-registers": {
+    "kind": "starter",
+    "assetPath": "content/downloads/railway-registers-starter.zip",
+    "sha256": "b69bac5cbc7de6ccbda8f29ebba284a562103f9a0d13185516c6371754ba74b5",
+    "bytes": 33118,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow railway-registers-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "aquaculture-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/aquaculture-register-starter.zip",
+    "sha256": "720483d8101e454d20f80815ee729e1dcfca897c821b10722d398aa784ba2d3e",
+    "bytes": 56550,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow aquaculture-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "forestry-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/forestry-register-starter.zip",
+    "sha256": "5a6413a70e3e994f002947a103b1728ffdaf581a43741e7d12501737399416f4",
+    "bytes": 74671,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow forestry-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "financial-services-register": {
+    "kind": "starter",
+    "assetPath": "content/downloads/financial-services-register-starter.zip",
+    "sha256": "484e2446c46ad428f216869f623647c4f983d4e4d77b1ccfc7f12009b36e4acf",
+    "bytes": 89583,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow financial-services-register-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "food-feed-authorisations": {
+    "kind": "starter",
+    "assetPath": "content/downloads/food-feed-authorisations-starter.zip",
+    "sha256": "64b6eb24664333597eebdb036786802d7e5d24608013f4ccf48239b716093466",
+    "bytes": 44364,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow food-feed-authorisations-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "environmental-permits": {
+    "kind": "starter",
+    "assetPath": "content/downloads/environmental-permits-starter.zip",
+    "sha256": "34b75df527be4b4acd898feda0596bf696f82c29c5c376884ad09efe9d0e6c7a",
+    "bytes": 120121,
+    "source": {
+      "kind": "Registry Studio pinned starter catalogue export",
+      "catalogueSha256": "6e769c8c0e681a49b48fcbe6bf43436759b991d2c8e57111d31ff4e8f020a199",
+      "assetSetTreeSha256": "2190edb25bb846ece5748af91fe1a7c8b2cd2d06d1a052e5b69a9893878fe712",
+      "breg": {
+        "repository": "https://github.com/registrystack/registry-stack.git",
+        "revision": "bae18995d0f00eba35d7b96629a56e051ac3d0df",
+        "version": "0.44.0"
+      },
+      "publicschema": {
+        "repository": "https://github.com/PublicSchema/publicschema.org",
+        "revision": "e5cfbbc0161e4d2c802d1acd752ec193253f7820",
+        "version": "0.3.0",
+        "license": "CC-BY-4.0"
+      }
+    },
+    "format": "Registry Studio starter ZIP",
+    "nativeUse": "Extract the archive, follow environmental-permits-starter/README.md, and use its project/ directory as the native starter source with matching Registry Studio and Registry Stack versions."
+  },
+  "dhis2-tracker": {
+    "sha256": "5aade4a844443f9bc9b8ed3255874771ac3d7a76596bdf7a7d8525d7e2063cc8",
+    "bytes": 11072,
+    "source": {
+      "repository": "https://github.com/registrystack/registry-stack",
+      "revision": "3e3c10d27436ba303dd5ca53e8bd1d7f16bba15f",
+      "path": "products/evidence/source-recipes/dhis2-tracker"
+    },
+    "format": "Evidence source export ZIP (BRegEvidenceSourceExport v1alpha1)",
+    "nativeUse": "Extract the archive, then run evidencectl source import ./dhis2-tracker --project ./evidence with matching evidencectl and evidence binaries. Review the deployment-specific identifiers and run a separate read-only compatibility check before relying on it.",
+    "assetPath": "content/downloads/dhis2-tracker-source-recipe.zip"
+  },
+  "opencrvs-event-search": {
+    "sha256": "acfecf1d14a66b8816c9b1305b034c67a48a9c11eab9f1a35a8a75de284a4619",
+    "bytes": 11511,
+    "source": {
+      "repository": "https://github.com/registrystack/registry-stack",
+      "revision": "3e3c10d27436ba303dd5ca53e8bd1d7f16bba15f",
+      "path": "products/evidence/source-recipes/opencrvs-event-search"
+    },
+    "format": "Evidence source export ZIP (BRegEvidenceSourceExport v1alpha1)",
+    "nativeUse": "Extract the archive, then run evidencectl source import ./opencrvs-event-search --project ./evidence with matching evidencectl and evidence binaries. Review the deployment-specific identifiers and run a separate read-only compatibility check before relying on it.",
+    "assetPath": "content/downloads/opencrvs-event-search-source-recipe.zip"
+  },
+  "odk-central": {
+    "sha256": "bc80aa3cd76d2e4c92430e8e7c2ec813c580e6bb2ecd712c5f8794a6515123f8",
+    "bytes": 29915,
+    "source": {
+      "repository": "https://github.com/registrystack/registry-stack",
+      "revision": "3e3c10d27436ba303dd5ca53e8bd1d7f16bba15f",
+      "path": "products/adapter/packs/odk-central"
+    },
+    "format": "Registry Adapter pack source ZIP (AdapterPack v1alpha1)",
+    "nativeUse": "Extract the archive, review odk-central/README.md, and pin odk-central/pack.yaml through the normal Adapter job and project workflow. Run adapterctl job check against the adopting job; this source pack has not been exercised against an ODK Central server.",
+    "assetPath": "content/downloads/odk-central-adapter-pack.zip"
+  }
+}

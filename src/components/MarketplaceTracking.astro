@@ -1,0 +1,261 @@
+---
+import {
+  marketplaceAnalyticsConfig,
+  marketplaceCanonicalPath,
+} from '../tracking/marketplace-tracking.mjs';
+
+interface Props {
+  title?: string;
+  path?: string;
+}
+
+const { title = 'Registry Stack Marketplace', path = Astro.url.pathname } = Astro.props;
+const canonicalPath = marketplaceCanonicalPath(path);
+if (!canonicalPath) throw new Error('Marketplace tracking requires a reviewed public route.');
+const analytics = marketplaceAnalyticsConfig({
+  websiteId: import.meta.env.PUBLIC_UMAMI_WEBSITE_ID,
+  scriptSrc: import.meta.env.PUBLIC_UMAMI_SCRIPT_SRC,
+});
+---
+
+<div
+  class="mp-tracking-control"
+  data-marketplace-analytics
+  data-umami-script-src={analytics?.scriptSrc}
+  data-umami-website-id={analytics?.websiteId}
+  data-umami-domain={analytics?.domain}
+>
+  <button type="button" class="mp-link" data-marketplace-tracking-open>
+    Tracking preferences
+  </button>
+</div>
+
+<aside
+  class="mp-tracking-preferences"
+  data-marketplace-tracking
+  data-marketplace-path={canonicalPath}
+  data-marketplace-title={title}
+  aria-labelledby="marketplace-tracking-title"
+  hidden
+>
+  <button type="button" class="mp-close" data-marketplace-tracking-close aria-label="Close tracking preferences">×</button>
+  <div>
+    <h2 id="marketplace-tracking-title" tabindex="-1">Cookies on Registry Stack</h2>
+    <p>
+      We use optional cookies to understand how you use our website, documentation, and marketplace.
+      If you contact us, we may link this activity to your enquiry. You can change your choice at any time.
+      <a href="/privacy/">Privacy policy</a>.
+    </p>
+    <p data-marketplace-tracking-signal hidden>
+      Your browser is asking sites not to track you, so optional tracking stays off.
+    </p>
+    <p data-marketplace-tracking-local hidden>
+      Tracking is disabled in local preview. No analytics or shared tracking request will be sent.
+    </p>
+    <p class="mp-tracking-error" data-marketplace-tracking-error role="alert" hidden>
+      Shared tracking is unavailable. Optional tracking remains off.
+    </p>
+  </div>
+  <div class="mp-tracking-actions">
+    <button type="button" class="mp-button mp-button-primary" data-marketplace-tracking-accept>
+      Accept optional cookies
+    </button>
+    <button type="button" class="mp-button" data-marketplace-tracking-reject>
+      Reject optional cookies
+    </button>
+  </div>
+</aside>
+
+<script>
+  import {
+    getSharedTrackingClient,
+    trackingDeniedByBrowser,
+    trackingFailureReason,
+  } from '../tracking/shared-tracking-client.mjs';
+  import {
+    buildMarketplacePageview,
+    installMarketplaceActionTracking,
+    marketplaceTrackingAllowed,
+  } from '../tracking/marketplace-tracking.mjs';
+
+  declare global {
+    interface Window {
+      umami?: { track(name: string, data: Record<string, string>): void };
+    }
+  }
+
+  const canonicalRuntime = window.location.origin === 'https://marketplace.registrystack.org';
+  const removeActionTracking = canonicalRuntime ? installMarketplaceActionTracking() : () => {};
+  const analyticsConfig = document.querySelector<HTMLElement>('[data-marketplace-analytics]');
+  const panel = document.querySelector<HTMLElement>('[data-marketplace-tracking]');
+  const openButton = document.querySelector<HTMLButtonElement>('[data-marketplace-tracking-open]');
+  const acceptButton = panel?.querySelector<HTMLButtonElement>('[data-marketplace-tracking-accept]');
+  const rejectButton = panel?.querySelector<HTMLButtonElement>('[data-marketplace-tracking-reject]');
+  const signalMessage = panel?.querySelector<HTMLElement>('[data-marketplace-tracking-signal]');
+  const localMessage = panel?.querySelector<HTMLElement>('[data-marketplace-tracking-local]');
+  const errorMessage = panel?.querySelector<HTMLElement>('[data-marketplace-tracking-error]');
+  const heading = panel?.querySelector<HTMLElement>('#marketplace-tracking-title');
+
+  if (canonicalRuntime && analyticsConfig?.dataset.umamiScriptSrc && analyticsConfig.dataset.umamiWebsiteId) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = analyticsConfig.dataset.umamiScriptSrc;
+    script.dataset.websiteId = analyticsConfig.dataset.umamiWebsiteId;
+    script.dataset.domains = analyticsConfig.dataset.umamiDomain ?? 'marketplace.registrystack.org';
+    script.dataset.excludeSearch = 'true';
+    document.head.append(script);
+  }
+
+  panel?.querySelector('[data-marketplace-tracking-close]')?.addEventListener('click', () => {
+    panel.hidden = true;
+    openButton?.focus();
+  });
+
+  if (panel && openButton && acceptButton && rejectButton && signalMessage && localMessage && errorMessage) {
+    const path = panel.dataset.marketplacePath;
+    const title = panel.dataset.marketplaceTitle;
+    if (!path || !title) throw new Error('Marketplace tracking configuration is incomplete.');
+    if (!canonicalRuntime) {
+      acceptButton.disabled = true;
+      rejectButton.disabled = true;
+      localMessage.hidden = false;
+      openButton.addEventListener('click', () => {
+        panel.hidden = false;
+        heading?.focus();
+      });
+    } else {
+    const pageview = buildMarketplacePageview({ path, title, referrer: document.referrer });
+    const denied = trackingDeniedByBrowser();
+    const client = getSharedTrackingClient({ onFailure: showFailure });
+    let attemptedGeneration: string | null = null;
+
+    function showPanel(moveFocus = false) {
+      panel!.hidden = false;
+      if (moveFocus) heading?.focus();
+    }
+
+    function hidePanel() {
+      panel!.hidden = true;
+    }
+
+    function showFailure(error?: unknown) {
+      errorMessage!.hidden = false;
+      errorMessage!.dataset.trackingFailure = trackingFailureReason(error);
+      showPanel();
+    }
+
+    function renderState(state: typeof client.state, confirmed = false) {
+      if (confirmed) {
+        errorMessage!.hidden = true;
+        delete errorMessage!.dataset.trackingFailure;
+      }
+      if (marketplaceTrackingAllowed({ state, navigator: window.navigator })) {
+        hidePanel();
+        if (state.generation !== attemptedGeneration) {
+          const generation = state.generation;
+          attemptedGeneration = generation;
+          void client.pageview(pageview).catch((error: unknown) => {
+            if (client.state.choice === 'accepted' && client.state.generation === generation) {
+              showFailure(error);
+            }
+          });
+        }
+      } else if (state.choice === null && !denied) {
+        showPanel();
+      } else {
+        hidePanel();
+      }
+    }
+
+    signalMessage.hidden = !denied;
+    acceptButton.disabled = denied;
+    openButton.addEventListener('click', () => showPanel(true));
+    acceptButton.addEventListener('click', async () => {
+      errorMessage.hidden = true;
+      if (denied) return showFailure();
+      try {
+        renderState(await client.choose('accepted'));
+      } catch (error) {
+        showFailure(error);
+      }
+    });
+    rejectButton.addEventListener('click', async () => {
+      errorMessage.hidden = true;
+      try {
+        renderState(await client.choose('rejected'));
+      } catch (error) {
+        showFailure(error);
+      }
+    });
+    client.subscribe(renderState);
+    void client.read().then(renderState).catch(showFailure);
+    window.addEventListener('pagehide', (event) => {
+      removeActionTracking();
+      if (!event.persisted) client.close();
+    });
+    }
+  }
+</script>
+
+<style>
+  .mp-tracking-control {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 0 24px 24px;
+  }
+
+  .mp-tracking-preferences {
+    align-items: end;
+    background: var(--mp-white, #ffffff);
+    border: 2px solid var(--mp-ink, #101820);
+    bottom: 16px;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    left: 50%;
+    max-width: min(860px, calc(100vw - 32px));
+    padding: 20px;
+    position: fixed;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 100;
+  }
+
+  .mp-tracking-preferences > .mp-close { position:absolute;top:8px;right:8px; }
+
+  .mp-tracking-preferences[hidden] {
+    display: none;
+  }
+
+  .mp-tracking-preferences h2,
+  .mp-tracking-preferences p {
+    margin: 0;
+  }
+
+  .mp-tracking-preferences p {
+    line-height: 1.5;
+    margin-top: 8px;
+    max-width: 640px;
+  }
+
+  .mp-tracking-error {
+    color: #9b1c1c;
+    font-weight: 700;
+  }
+
+  .mp-tracking-actions {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+
+  @media (max-width: 720px) {
+    .mp-tracking-preferences {
+      align-items: stretch;
+      bottom: 8px;
+      grid-template-columns: 1fr;
+      max-width: calc(100vw - 16px);
+      padding: 16px;
+    }
+  }
+</style>

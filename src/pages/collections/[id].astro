@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import { packs, collections } from '../../lib/catalogue.mjs';
+import { renderCatalogue } from '../../catalogue.js';
+export function getStaticPaths() { return collections.map(collection => ({ params: { id: collection.key }, props: { collection } })); }
+const { collection } = Astro.props;
+const selected = collection.starterIds.map(id => packs.find(pack => pack.id === id));
+---
+<Base title={collection.title} description={collection.description} screen="collection">
+<div class="mp-contribute-hero"><div class="mp-wrap"><a href="/collections/">← All collections</a><p class="mp-eyebrow">Solution collection · {selected.length} free starters</p><h1>{collection.title}</h1><p>{collection.description}</p><a class="mp-button mp-on-blue" href={collection.mainSiteUrl}>Explore the solution on Registry Stack ↗</a></div></div>
+<section class="mp-wrap mp-section"><h2>Choose a register to start with.</h2><p>Each pack contains a model for your team to adapt, available free on request. These starters do not form a deployed service on their own.</p><div class="mp-catalogue" set:html={renderCatalogue(selected)} /></section>
+</Base>

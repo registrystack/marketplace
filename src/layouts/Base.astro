@@ -1,0 +1,66 @@
+---
+import '../styles.css';
+import { marketplaceCsp } from '../lib/content-security-policy.mjs';
+import MarketplaceTracking from '../components/MarketplaceTracking.astro';
+import { marketplaceCanonicalPath } from '../tracking/marketplace-tracking.mjs';
+const { title, description, screen = 'home' } = Astro.props;
+const csp = marketplaceCsp({ analyticsScript: import.meta.env.PUBLIC_UMAMI_SCRIPT_SRC, requestEndpoint: import.meta.env.PUBLIC_STARTER_REQUEST_ENDPOINT });
+const canonical = new URL(Astro.url.pathname, 'https://marketplace.registrystack.org');
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta http-equiv="Content-Security-Policy" content={csp}/><meta name="referrer" content="strict-origin-when-cross-origin"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{title} | Registry Stack Marketplace</title><meta name="description" content={description}/><meta name="robots" content="noindex,nofollow"/><link rel="canonical" href={canonical}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:type" content="website"/></head><body data-screen={screen}><div id="rs-marketplace-sketch">  <div class="mp-context">
+    <span>marketplace.registrystack.org</span>
+    <span>Free packs · Community contributions</span>
+  </div>
+  <header class="mp-header mp-wrap">
+    <a
+      class="mp-brand cursor-interaction"
+
+      data-route="home"
+      aria-label="Registry Stack marketplace home"
+     href="/">
+      <span class="mp-brandmark" aria-hidden="true"
+        ><span></span><span></span><span></span
+      ></span>
+      <span class="mp-brand-name"
+        >Registry Stack<span class="mp-brand-sub">Marketplace</span></span
+      >
+    </a>
+    <nav class="mp-nav" aria-label="Marketplace">
+      <a
+        class="cursor-interaction"
+
+        data-route="home"
+        aria-current={screen === "home" ? "page" : undefined}
+
+       href="/">
+        Browse packs
+      </a>
+      <a class="cursor-interaction"  data-route="contribute" aria-current={screen === "contribute" ? "page" : undefined} href="/contribute/">
+        Contribute
+      </a>
+      <a
+        href="https://registrystack.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >About Registry Stack ↗</a
+      >
+    </nav>
+  </header>
+
+<main><slot/></main>  <footer class="mp-footer mp-wrap">
+    <span
+      >Registry Stack Marketplace<br />Reusable starting points.
+      Institution-controlled systems.</span
+    >
+    <div class="mp-footer-links"><a href="/privacy/">Privacy</a>
+      <a class="cursor-interaction"  data-route="home" href="/">
+        Browse packs</a><a class="cursor-interaction"  data-route="contribute" href="/contribute/">
+        Contribute</a><a
+        href="https://docs.registrystack.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Documentation ↗</a
+      >
+    </div>
+  </footer>
+{marketplaceCanonicalPath(Astro.url.pathname) && <MarketplaceTracking title={title} path={Astro.url.pathname}/>}</div></body></html>

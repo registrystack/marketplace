@@ -1,0 +1,8 @@
+---
+import Base from '../../layouts/Base.astro';
+import PackRequestDialog from '../../components/PackRequestDialog.astro';
+import { packs } from '../../lib/catalogue.mjs';
+export function getStaticPaths() { return packs.map(pack => ({params: {id: pack.id}, props: {pack}})); }
+const { pack } = Astro.props;
+---
+<Base title={pack.title + ' in Studio'} description={'Studio and native tooling instructions for ' + pack.title} screen="instructions"><div class="mp-wrap mp-section"><a href={`/packs/${pack.id}/`}>← Back to {pack.title}</a><h1>Use this pack in Studio</h1>{pack.type === 'starter' ? <><p class="mp-panel-intro">Studio starts from its checked local catalogue. Web pages cannot launch or import into it automatically.</p><h2>Start local Studio</h2><pre class="mp-studio-files"><code>registry-studio start</code></pre><p>After access is granted, choose {pack.title} in your installed catalogue, answer its questions, and review the generated files and product checks. Your installed catalogue may differ from this download.</p></> : <><p>Studio import for this pack type is coming soon. Use the native product tooling with source assets shared after your request.</p><p>{pack.download?.nativeUse || 'This kit is planned and has no downloadable release.'}</p></>}<aside class="mp-note"><h2>Compatibility</h2><p>{pack.referenceNote}</p></aside><div class="mp-actions">{pack.download && <a class="mp-button mp-button-primary" href={pack.requestHref} data-request-access data-marketplace-action="download_intent" data-pack-id={pack.id}>Download pack ↓</a>}<a class="mp-button" href={pack.source}>Source documentation ↗</a></div></div>{!pack.paid && <PackRequestDialog pack={pack}/>}</Base>

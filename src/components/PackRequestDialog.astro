@@ -1,0 +1,223 @@
+---
+import { packRequestEndpoint, packRequestRecoveryHref } from '../lib/pack-request';
+
+interface Props {
+  pack: { id: string; title: string; type: string; paid: boolean };
+}
+
+const { pack } = Astro.props;
+const endpoint = pack.paid
+  ? undefined
+  : packRequestEndpoint(import.meta.env.PUBLIC_STARTER_REQUEST_ENDPOINT);
+const recoveryHref = packRequestRecoveryHref(pack.title);
+---
+
+<dialog id="mp-request-dialog" class="mp-request-dialog" data-pack-request-dialog
+  aria-labelledby="mp-request-dialog-title"
+  data-pack-id={pack.id} data-pack-title={pack.title}>
+  <div class="mp-dialog-head">
+    <div>
+      <p class="mp-eyebrow">Free on request</p>
+      <h2 id="mp-request-dialog-title">Request {pack.title}</h2>
+    </div>
+    <form method="dialog">
+      <button class="mp-close" type="submit" aria-label="Close request form">×</button>
+    </form>
+  </div>
+
+  <div class="mp-dialog-body">
+    <p>
+      The pack is free. Share your email address so the Registry Stack team can review the request
+      and provide access. Optional context helps us understand how you plan to use it.
+    </p>
+
+    <form class="mp-form" data-pack-request-form data-endpoint={endpoint}
+      aria-labelledby="mp-request-dialog-title">
+        <fieldset data-pack-request-fields>
+          <label class="mp-field">Email address
+            <input name="email" type="email" autocomplete="email" maxlength="254" required
+              data-pack-request-email />
+          </label>
+          <div class="mp-field-row"><label class="mp-field"><span>Organization <small>Optional</small></span>
+            <input name="organization" type="text" autocomplete="organization" maxlength="200" />
+          </label>
+          <label class="mp-field"><span>Your role <small>Optional</small></span>
+            <input name="role" type="text" autocomplete="organization-title" maxlength="200" />
+          </label>
+          </div><label class="mp-field"><span>What are you trying to do? <small>Optional</small></span>
+            <textarea name="message" rows="3" maxlength="2000"></textarea>
+          </label>
+          <label class="mp-request-honeypot" aria-hidden="true">Leave this empty
+            <input name="website" type="text" tabindex="-1" autocomplete="off" />
+          </label>
+          <p class="mp-request-privacy">
+            We use these details to review your request and reply. This marketplace request does
+            not attach a tracking identifier and does not sign you up for marketing.
+            <a href="/privacy/">Privacy policy</a>.
+          </p>
+          <button class="mp-button mp-button-primary" type="submit" data-pack-request-submit
+            disabled>Send request</button>
+        </fieldset>
+        <p data-pack-request-local role="status" hidden>
+          Local preview: requests are not sent. You can review and fill the form, but Send request
+          remains disabled.
+        </p>
+        <p class="mp-request-unavailable" data-pack-request-unavailable role="status" hidden>
+          The request form is currently unavailable. No request has been sent.
+        </p>
+        <p data-pack-request-submitting role="status" aria-live="polite" hidden>
+          Sending your request&hellip;
+        </p>
+        <p data-pack-request-success role="status" aria-live="polite" tabindex="-1" hidden>
+          Request received. The Registry Stack team will review it.
+        </p>
+        <p data-pack-request-error role="alert" tabindex="-1" hidden>
+          We could not confirm your request. Your details are still here. Try again or use the
+          email option below.
+        </p>
+      </form>
+
+    <p class="mp-request-fallback">
+      <a href={recoveryHref}>Email contact@registrystack.org about this pack</a>.
+    </p>
+  </div>
+</dialog>
+
+<script>
+  import { submitPackRequest } from '../lib/pack-request';
+  import { trackMarketplaceAction } from '../tracking/marketplace-tracking.mjs';
+
+  declare global {
+    interface Window {
+      umami?: { track(name: string, data: Record<string, string>): void };
+    }
+  }
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-pack-request-dialog]');
+  const form = dialog?.querySelector<HTMLFormElement>('[data-pack-request-form]');
+  const fieldset = form?.querySelector<HTMLFieldSetElement>('[data-pack-request-fields]');
+  const email = form?.querySelector<HTMLInputElement>('[data-pack-request-email]');
+  const submit = form?.querySelector<HTMLButtonElement>('[data-pack-request-submit]');
+  const localMessage = form?.querySelector<HTMLElement>('[data-pack-request-local]');
+  const unavailable = form?.querySelector<HTMLElement>('[data-pack-request-unavailable]');
+  const submitting = form?.querySelector<HTMLElement>('[data-pack-request-submitting]');
+  const success = form?.querySelector<HTMLElement>('[data-pack-request-success]');
+  const error = form?.querySelector<HTMLElement>('[data-pack-request-error]');
+  const canonicalRuntime = window.location.origin === 'https://marketplace.registrystack.org';
+  let submissionInProgress = false;
+  let submissionController: AbortController | undefined;
+  let activeTrigger: HTMLElement | undefined;
+
+  if (dialog) {
+    document.addEventListener('click', (event) => {
+      const trigger = event.target instanceof Element
+        ? event.target.closest<HTMLElement>('[data-request-access]')
+        : null;
+      if (!trigger || trigger.dataset.packId !== dialog.dataset.packId) return;
+      event.preventDefault();
+      activeTrigger = trigger;
+      if (!dialog.open) dialog.showModal();
+      email?.focus();
+    });
+    dialog.addEventListener('close', () => {
+      submissionController?.abort();
+      activeTrigger?.focus();
+      activeTrigger = undefined;
+    });
+  }
+
+  if (form && fieldset && submit && localMessage && unavailable && submitting && success && error) {
+    const endpoint = form.dataset.endpoint;
+    if (canonicalRuntime && endpoint) submit.disabled = false;
+    else if (canonicalRuntime) unavailable.hidden = false;
+    else localMessage.hidden = false;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!canonicalRuntime || !endpoint || submissionInProgress || !form.reportValidity()) return;
+      const data = new FormData(form);
+      submissionInProgress = true;
+      const controller = new AbortController();
+      submissionController = controller;
+      fieldset.disabled = true;
+      form.setAttribute('aria-busy', 'true');
+      submitting.hidden = false;
+      success.hidden = true;
+      error.hidden = true;
+      try {
+        const packId = dialog?.dataset.packId ?? '';
+        const packTitle = dialog?.dataset.packTitle ?? '';
+        await submitPackRequest(endpoint, {
+          email: String(data.get('email') ?? '').trim(),
+          organization: String(data.get('organization') ?? '').trim(),
+          role: String(data.get('role') ?? '').trim(),
+          message: String(data.get('message') ?? '').trim(),
+          website: String(data.get('website') ?? '').trim(),
+          packId,
+          packTitle,
+          sourcePage: new URL(window.location.pathname, window.location.origin).toString(),
+        }, { signal: controller.signal });
+        submitting.hidden = true;
+        success.hidden = false;
+        form.reset();
+        trackMarketplaceAction({
+          dataset: { marketplaceAction: 'request_submitted', packId },
+        }, { path: window.location.pathname, umami: window.umami });
+        success.focus();
+      } catch {
+        submitting.hidden = true;
+        if (controller.signal.aborted && !dialog?.open) {
+          fieldset.disabled = false;
+          return;
+        }
+        error.hidden = false;
+        fieldset.disabled = false;
+        error.focus();
+      } finally {
+        submissionInProgress = false;
+        if (submissionController === controller) submissionController = undefined;
+        form.removeAttribute('aria-busy');
+      }
+    });
+  }
+</script>
+
+<style>
+  .mp-request-dialog {
+    border: 2px solid var(--mp-ink, #101820);
+    max-height: calc(100vh - 32px);
+    max-width: min(680px, calc(100vw - 32px));
+    padding: 0;
+    width: 100%;
+  }
+  .mp-request-dialog::backdrop { background: rgb(16 24 32 / 62%); }
+  .mp-dialog-head, .mp-dialog-body { padding: 20px; }
+  .mp-dialog-head {
+    align-items: start;
+    border-bottom: 1px solid var(--mp-rule, #d5dadd);
+    display: flex;
+    justify-content: space-between;
+  }
+  .mp-dialog-head h2, .mp-dialog-head p, .mp-dialog-body > p { margin: 0; }
+  .mp-dialog-body { display: grid; gap: 18px; overflow: auto; }
+  .mp-request-honeypot {
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 1px;
+  }
+  .mp-request-privacy, .mp-request-fallback,
+  [data-pack-request-local], [data-pack-request-submitting],
+  [data-pack-request-success], [data-pack-request-error] {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  [data-pack-request-success] { color: var(--mp-blue, #005ea8); font-weight: 700; }
+  [data-pack-request-error] { color: #9b1c1c; font-weight: 700; }
+  .mp-request-fallback {
+    border-top: 1px solid var(--mp-rule, #d5dadd);
+    padding-top: 16px;
+  }
+</style>

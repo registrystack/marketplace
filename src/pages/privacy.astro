@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Privacy policy';
+const description = 'What the Registry Stack Marketplace collects, why, and how to control optional tracking.';
+---
+
+<Base title={title} description={description} screen="privacy">
+  <section class="mp-wrap mp-section" aria-labelledby="marketplace-privacy-title">
+    <p class="mp-eyebrow">Privacy</p>
+    <h1 id="marketplace-privacy-title">Privacy policy</h1>
+    <div class="mp-panel-intro">
+      <p>
+        This policy covers marketplace.registrystack.org. Registry Stack is published by Aubex
+        Consulting LLC, 28 Geary St, Ste 650 #189, San Francisco, CA 94108, United States.
+      </p>
+
+      <h2>Marketplace use</h2>
+      <p>
+        You can browse the public catalogue without an account. Packs are not public downloads.
+        If you use a pack request form, we collect your email address and any organization, role,
+        or request details you choose to provide. We also record the public pack identifier, source
+        page, and time of the request in our self-hosted Mautic form system so our team can review
+        the request and reply manually. The marketplace never sends a browser tracking identifier
+        with this request, even if you accepted optional visit tracking. Submitting a request does
+        not sign you up for marketing. If the form is unavailable, you can use the email fallback;
+        we then receive your address and message as ordinary business correspondence.
+      </p>
+      <p>
+        The marketplace does not receive the terms you enter in its local catalogue search.
+        A contribution form prepares a GitHub
+        draft for you to review; it does not submit the draft to Registry Stack automatically.
+        GitHub processes information only when you choose to continue there.
+      </p>
+
+      <h2>Aggregate analytics</h2>
+      <p>
+        When configured for publication, the marketplace uses self-hosted, cookie-free Umami
+        analytics to count page views and a fixed allowlist of actions, such as a Download pack
+        click, a confirmed request, Studio instructions, and opening a contribution draft. Action
+        records can contain the public pack identifier and a sanitized marketplace path. They
+        never contain search terms, query parameters, form contents, email addresses, or request
+        tokens. Umami analytics are separate from the request form and the optional Mautic visit
+        tracking described below; they are not connected to a name or email.
+      </p>
+
+      <h2>Optional visit tracking</h2>
+      <p>
+        Optional Mautic tracking relies on your consent. A fresh acceptance covers the main Registry
+        Stack website, its canonical documentation, and this marketplace for six months. An earlier
+        choice covering only the website and documentation does not authorize marketplace tracking.
+      </p>
+      <p>
+        Before acceptance, the marketplace does not ask the shared bridge to send a Mautic page
+        view. After acceptance, it sends only the canonical public route, fixed public page title,
+        and referring site's origin. It sends no query, fragment, search value, contribution text,
+        email address, or browser identifier. The identifier remains inside the bridge on
+        registrystack.org; the marketplace cannot request it.
+      </p>
+      <p>
+        Use <strong>Tracking preferences</strong> to reject or withdraw consent. Withdrawal stops
+        future optional tracking across all three properties and clears the bridge's browser
+        identifier. It does not automatically delete records already received. Registry Stack also
+        treats Do Not Track and Global Privacy Control as requests to keep optional tracking off.
+        If the bridge, storage, or tracker is blocked, optional tracking stays off and the public
+        catalogue remains available.
+      </p>
+
+      <h2>Hosting and linked services</h2>
+      <p>
+        GitHub Pages hosts this static site and processes ordinary server-log data to deliver and
+        protect it. Source links and contribution drafts can lead to GitHub, which has
+        its own privacy practices. The main website and Registry Docs publish their own notices for
+        processing other than the shared optional tracking choice.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        You can ask to access, correct, or delete personal data through the
+        <a href="https://registrystack.org/contact/?type=privacy">Registry Stack privacy contact form</a>.
+        Request details and related correspondence are retained as ordinary business records while
+        they remain relevant. Aggregate analytics may not identify records that belong to a
+        particular visitor.
+      </p>
+
+      <p><strong>Effective date:</strong> November 4, 2026.</p>
+    </div>
+  </section>
+</Base>
