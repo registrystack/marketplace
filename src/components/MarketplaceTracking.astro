@@ -44,8 +44,10 @@ const sharedTrackingEnabled = import.meta.env.PUBLIC_SHARED_TRACKING_ENABLED ===
   <div>
     <h2 id="marketplace-tracking-title" tabindex="-1">Cookies on Registry Stack</h2>
     <p>
-      When enabled, optional cookies help us understand how you use our website, documentation, and marketplace.
-      If you contact us, we may link this activity to your enquiry. You can change your choice at any time.
+      Optional cookies connect your marketplace visits with your activity on the Registry Stack
+      website and documentation. Marketplace tracking starts only after you accept here.
+      Rejecting stops optional tracking across these sites. If you contact us on the main website,
+      we may link this activity to your enquiry. You can change your choice at any time.
       <a href="/privacy/">Privacy policy</a>.
     </p>
     <p data-marketplace-tracking-signal hidden>
@@ -106,6 +108,7 @@ const sharedTrackingEnabled = import.meta.env.PUBLIC_SHARED_TRACKING_ENABLED ===
     script.dataset.websiteId = analyticsConfig.dataset.umamiWebsiteId;
     script.dataset.domains = analyticsConfig.dataset.umamiDomain ?? 'marketplace.registrystack.org';
     script.dataset.excludeSearch = 'true';
+    script.dataset.excludeHash = 'true';
     document.head.append(script);
   }
 

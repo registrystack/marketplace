@@ -24,17 +24,16 @@ import { trackingDeniedByBrowser } from '../src/tracking/shared-tracking-client.
 
 const root = new URL('../', import.meta.url);
 
-test('uses the fresh three-property consent scope without marketplace identity access', () => {
-  assert.equal(TRACKING_PROTOCOL_VERSION, 3);
+test('preserves the deployed protocol while marketplace enrollment stays broker-owned', () => {
+  assert.equal(TRACKING_PROTOCOL_VERSION, 2);
   assert.deepEqual(TRACKING_ALLOWED_ORIGINS, [
     'https://registrystack.org',
     'https://docs.registrystack.org',
-    'https://marketplace.registrystack.org',
   ]);
   assert.equal(TRACKING_ASSOCIATION_ORIGIN, 'https://registrystack.org');
-  assert.equal(TRACKING_CONSENT_STORAGE_KEY, 'registrystack.shared-marketing-tracking.v3');
-  assert.equal(TRACKING_IDENTITY_STORAGE_KEY, 'registrystack.shared-mautic-identity.v3');
-  assert.equal(TRACKING_LOCAL_REFUSAL_STORAGE_KEY, 'registrystack.tracking-local-refusal.v3');
+  assert.equal(TRACKING_CONSENT_STORAGE_KEY, 'registrystack.shared-marketing-tracking.v2');
+  assert.equal(TRACKING_IDENTITY_STORAGE_KEY, 'registrystack.shared-mautic-identity.v2');
+  assert.equal(TRACKING_LOCAL_REFUSAL_STORAGE_KEY, 'registrystack.tracking-local-refusal.v2');
 });
 
 test('accepts only explicit synthetic Umami configuration and has no production default', () => {
@@ -159,9 +158,12 @@ test('component separates aggregate events from consented pageviews and never re
   assert.match(component, /window\.location\.origin === 'https:\/\/marketplace\.registrystack\.org'/);
   assert.match(component, /Tracking is disabled in local preview/);
   assert.match(component, /PUBLIC_SHARED_TRACKING_ENABLED === 'true'/);
+  assert.match(component, /script\.dataset\.excludeHash = 'true'/);
   assert.match(component, /if \(!canonicalRuntime \|\| !sharedTrackingEnabled\)/);
   assert.match(component, /Optional visit tracking is not enabled on this site/);
-  assert.match(component, /website, documentation, and marketplace/i);
+  assert.match(component, /website and documentation/i);
+  assert.match(component, /Marketplace tracking starts only after you accept here/);
+  assert.match(privacy, /activity\s+already recorded from those sites/);
   assert.doesNotMatch(component, /\.associate\(|deviceId|mautic_device_id|mtc_id/);
   assert.match(privacy, /fresh acceptance/i);
   assert.match(privacy, /Do Not Track and Global Privacy Control/i);

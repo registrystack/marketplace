@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "protocolVersion": 3,
-  "scope": "website-docs-marketplace",
+  "protocolVersion": 2,
+  "scope": "website-docs-with-explicit-marketplace-enrollment",
   "files": {
-    "tracking-protocol.mjs": "bab531ae70933e2fdc21fc913294fac76e14f51482d48a453e275c8cda4c02c0",
-    "shared-tracking-client.mjs": "1799d369925e691ebd96829678030f5c7a808dc7f91bc03a6478301a7d2de4cc"
+    "tracking-protocol.mjs": "24c903a288844b29d612e5dd38b114dbba528d20ca645d65fe6f423159653d04",
+    "shared-tracking-client.mjs": "188028da812f8b4b0272de7b4e2f331fba35f29355cf4916ee90af6d6c6c91d7"
   }
 }

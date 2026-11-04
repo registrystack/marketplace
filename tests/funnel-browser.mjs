@@ -32,7 +32,7 @@ try {
     if (url.origin === 'https://fonts.googleapis.com') return route.fulfill({ contentType: 'text/css', body: '' });
     if (url.origin === 'https://registrystack.org' && url.pathname === '/tracking-bridge/') {
       bridgeRequests++;
-      return route.fulfill({ contentType: 'text/html', body: `<script>addEventListener('message',event=>{const request=event.data;if(request.protocol!=='registrystack-tracking'||request.version!==3)return;event.source.postMessage({protocol:request.protocol,version:3,id:request.id,ok:true,state:{choice:'rejected',generation:'00000000-0000-4000-8000-000000000002',expiresAt:Date.now()+86400000,revision:1}},event.origin)});</script>` });
+      return route.fulfill({ contentType: 'text/html', body: `<script>addEventListener('message',event=>{const request=event.data;if(request.protocol!=='registrystack-tracking'||request.version!==2)return;event.source.postMessage({protocol:request.protocol,version:2,id:request.id,ok:true,state:{choice:'rejected',generation:'00000000-0000-4000-8000-000000000002',expiresAt:Date.now()+86400000,revision:1}},event.origin)});</script>` });
     }
     if (url.origin === 'https://forms.example.test') {
       const data = new URLSearchParams(request.postData());

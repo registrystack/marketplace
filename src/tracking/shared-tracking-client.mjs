@@ -9,7 +9,7 @@ import {
 export { SHARED_TRACKING_BRIDGE_URL } from './tracking-protocol.mjs';
 
 const EMPTY_STATE = Object.freeze({ choice: null, generation: null, expiresAt: null, revision: 0 });
-const LOCAL_REFUSAL_KEY = 'registrystack.tracking-local-refusal.v3';
+const LOCAL_REFUSAL_KEY = 'registrystack.tracking-local-refusal.v2';
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 const UTM_VALUE = /^[a-z0-9][a-z0-9._-]{0,79}$/i;
 

@@ -1,15 +1,14 @@
 export const TRACKING_PROTOCOL = 'registrystack-tracking';
-export const TRACKING_PROTOCOL_VERSION = 3;
+export const TRACKING_PROTOCOL_VERSION = 2;
 export const TRACKING_ALLOWED_ORIGINS = Object.freeze([
   'https://registrystack.org',
   'https://docs.registrystack.org',
-  'https://marketplace.registrystack.org',
 ]);
 export const TRACKING_ASSOCIATION_ORIGIN = 'https://registrystack.org';
 export const SHARED_TRACKING_BRIDGE_URL = 'https://registrystack.org/tracking-bridge/';
-export const TRACKING_CONSENT_STORAGE_KEY = 'registrystack.shared-marketing-tracking.v3';
-export const TRACKING_IDENTITY_STORAGE_KEY = 'registrystack.shared-mautic-identity.v3';
-export const TRACKING_LOCAL_REFUSAL_STORAGE_KEY = 'registrystack.tracking-local-refusal.v3';
+export const TRACKING_CONSENT_STORAGE_KEY = 'registrystack.shared-marketing-tracking.v2';
+export const TRACKING_IDENTITY_STORAGE_KEY = 'registrystack.shared-mautic-identity.v2';
+export const TRACKING_LOCAL_REFUSAL_STORAGE_KEY = 'registrystack.tracking-local-refusal.v2';
 export const TRACKING_CONSENT_LIFETIME_MS = 180 * 24 * 60 * 60 * 1000;
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;

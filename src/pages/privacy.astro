@@ -48,9 +48,13 @@ const sharedTrackingEnabled = import.meta.env.PUBLIC_SHARED_TRACKING_ENABLED ===
       <h2>Optional visit tracking</h2>
       {!sharedTrackingEnabled && <p>Optional visit tracking is currently disabled on this marketplace. The following controls apply when it is enabled.</p>}
       <p>
-        Optional Mautic tracking relies on your consent. A fresh acceptance covers the main Registry
-        Stack website, its canonical documentation, and this marketplace for six months. An earlier
-        choice covering only the website and documentation does not authorize marketplace tracking.
+        Optional Mautic tracking relies on your consent. The marketplace requires a fresh acceptance
+        here before it can join the main Registry Stack website and its documentation's tracking
+        choice. An earlier acceptance on the website or documentation does not authorize marketplace
+        tracking. Accepting here allows subsequent marketplace visits to be combined with activity
+        already recorded from those sites, for the remainder of the six-month consent period.
+        Rejection, expiry, or a later change to the shared consent requires a fresh marketplace
+        acceptance before marketplace tracking can resume.
       </p>
       <p>
         Before acceptance, the marketplace does not ask the shared bridge to send a Mautic page

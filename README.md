@@ -10,9 +10,9 @@ Requires Node 24 or later and npm.
     npm run check:ci
     npm run dev
 
-Open http://127.0.0.1:4317. The server binds to loopback. The generated site is in dist/. Review builds and the initial Pages publication include noindex metadata and a disallow-all robots.txt. The local server also adds an X-Robots-Tag header. Indexing requires a deliberate change to those controls.
+Open http://127.0.0.1:4317. The server binds to loopback. The generated site is in dist/. Review builds and Pages publication include noindex metadata and a disallow-all robots.txt. The local server also adds an X-Robots-Tag header. Indexing requires a deliberate change to those controls.
 
-The default build loads no analytics, shared consent bridge, or request endpoint. The request popup can be filled in for review, but Send request is disabled. No production form submissions are needed for verification.
+The default and pull-request builds load no analytics, shared consent bridge, or request endpoint. The request popup can be filled in for review, but Send request is disabled. Production configuration is supplied only to the separate main-branch production build.
 
 ## Catalogue and pages
 
@@ -37,15 +37,15 @@ The dialog uses the existing native kiosk request contract when PUBLIC_STARTER_R
 
 With JavaScript unavailable, the primary link falls back to the existing main-site contact form with supported type=starter and context parameters. Paid kits have no request or purchase action.
 
-## Tracking configuration
+## Production configuration and tracking
 
-No production analytics values are supplied by default. PUBLIC_UMAMI_WEBSITE_ID and PUBLIC_UMAMI_SCRIPT_SRC must be configured together to enable cookie-free aggregate Umami analytics on the canonical marketplace origin. The script URL must be explicit HTTPS. The content security policy admits only the configured analytics and request origins, plus the exact main-site consent bridge origin.
+Production publication requires four repository variables: PUBLIC_UMAMI_WEBSITE_ID, PUBLIC_UMAMI_SCRIPT_SRC, PUBLIC_STARTER_REQUEST_ENDPOINT, and PUBLIC_SHARED_TRACKING_ENABLED. The shared-tracking variable must be explicitly true or false. Use true for the requested optional Mautic activation; use false to publish a new production artifact with optional Mautic tracking deliberately off. Umami analytics and the request form remain explicitly configured in either state. The Umami ID must be a version-4 UUID, its script must be an explicit HTTPS .js URL without credentials, query parameters, or a fragment, and the form endpoint must meet the kiosk contract above. These values are public build configuration, not credentials. The content security policy admits only the configured analytics and request origins, plus the exact main-site consent bridge origin.
 
 The allowlisted marketplace_action event distinguishes download_intent from request_submitted. Intent means the visitor opened the request popup; submission means the endpoint confirmed the request. Neither event claims that a file was delivered. Event payloads contain public pack identifiers and canonical paths, never email, form text, search terms, query parameters, or request tokens.
 
-Optional Mautic page activity uses the existing main-site consent bridge. The prepared integration adds the marketplace to a fresh protocol-v3 consent scope across the website, documentation, and marketplace. Earlier consent does not silently cover the extra property. DNT, GPC, refusal, expiry, and bridge failures keep optional tracking off. The marketplace cannot request the bridge's browser identity. Its form uses the unlinked kiosk request mode, regardless of tracking choice.
+Optional Mautic page activity retains the deployed protocol-v2 contract and shared client used by the main website and documentation. Marketplace access is an additional broker-owned enrollment bound to the current global consent generation. An acceptance recorded only on the website or documentation never enrolls the marketplace. The visitor must explicitly accept on the marketplace before later marketplace activity can join activity already recorded from those sites. A global rejection, consent expiry, or consent-generation rotation invalidates marketplace enrollment and requires a fresh marketplace acceptance.
 
-PUBLIC_SHARED_TRACKING_ENABLED must also be exactly true before a marketplace build can contact the shared consent bridge. It defaults to false. Keep it false until the main website and documentation have their matching protocol-v3 changes ready for coordinated publication.
+DNT, GPC, local refusal, and bridge failures keep optional tracking off. The marketplace cannot request the bridge's browser identity. Its existing Mautic kiosk form never associates a device identity, regardless of tracking choice. Confirmed request_submitted and other aggregate marketplace_action events go to Umami separately from Mautic page activity.
 
 ## Source archives and verification
 
@@ -71,18 +71,28 @@ Archive checks prove integrity and native file closure. They do not establish pr
 
 Prepared main-site changes keep its solution stories and leave current starter pages active by default. Only PUBLIC_MARKETPLACE_MIGRATION_ENABLED=true enables the 85 starter redirects and marketplace collection links. The prepared static redirects are HTML meta refresh documents, not HTTP 301 responses. The exact route map can later configure an edge redirect layer. No live routes have changed.
 
-For compatibility with the existing native request form, requests use request_type=starter and starter_id for every free pack, including integration packs. Reporting should treat starter_id as the general pack identifier; the public UI calls these packs. Before enabling live sending, verify that the existing form gateway allows the exact marketplace origin and preserves the canonical marketplace source_page. The initial Pages publication leaves the request endpoint unconfigured, so visitors can fill the dialog but cannot send it.
+For compatibility with the existing native request form, requests use request_type=starter and starter_id for every free pack, including integration packs. Reporting should treat starter_id as the general pack identifier; the public UI calls these packs. Before relying on live sending, verify that the existing form gateway allows the exact marketplace origin, preserves the canonical marketplace source_page, confirms every saved field, and receives no device association.
 
 ## Repository and CI
 
-The repository is public at https://github.com/registrystack/marketplace. Marketplace CI runs on pull requests, pushes to main, and manual dispatch. Its build token is read-only. A separate Pages deployment job has the Pages and OIDC permissions required for publication; it runs only after successful checks on main and when PAGES_DEPLOYMENT_ENABLED is exactly true. Leaving the variable unset or changing it from true provides an emergency publication stop. Official actions are pinned to immutable commits.
+The repository is public at https://github.com/registrystack/marketplace. Marketplace CI runs on pull requests, pushes to main, and manual dispatch. Its build token is read-only. A separate production build starts only after all checks pass on main and only when PAGES_DEPLOYMENT_ENABLED is exactly true. It receives the four production variables, builds from a fresh checkout, runs scripts/verify-preview-artifact.mjs --production, and uploads the Pages artifact. The deployment job alone has the Pages and OIDC permissions required for publication. Leaving PAGES_DEPLOYMENT_ENABLED unset or changing it from true provides an emergency publication stop. Official actions are pinned to immutable commits.
 
-The workflow installs locked dependencies, runs check:ci, executes browser journeys on a temporary loopback server, and checks the fully intercepted request/analytics funnel. It uploads only the verified dist/ site and browser review images, retained for seven days. The deployment build sets PUBLIC_SHARED_TRACKING_ENABLED to false and leaves Umami and request endpoint configuration empty. Preview output rejects ZIPs and other archives, private asset paths, live request/analytics configuration, and indexable HTML.
+The review job installs locked dependencies, runs check:ci, executes browser journeys on a temporary loopback server, and checks the fully intercepted request/analytics funnel. Its environment keeps all live configuration empty or false. It uploads only the verified review dist/ site and browser review images, retained for seven days. Review verification rejects ZIPs and other archives, private asset paths, live request or analytics configuration, and indexable HTML.
 
-The tracking protocol and shared client are pinned by data/tracking-contract.json. The explicit local cross-site integration check compares maintained checkouts without making the standalone CI depend on sibling repositories:
+Production verification requires complete explicit configuration and confirms that the built pages contain those exact public values. It also retains the archive, private-path, symlink, noindex, and disallow-all robots checks. A stale configured dist/ cannot enter the review artifact because review and production run in separate jobs and checkouts.
+
+The deployed protocol-v2 tracking protocol and shared client are pinned by data/tracking-contract.json. The explicit local cross-site integration check compares maintained checkouts without making the standalone CI depend on sibling repositories:
 
     node scripts/check-shared-tracking.mjs --website-root /absolute/website --docs-root /absolute/docs/site
 
-Those pins describe the prepared protocol-v3 integration. They do not establish that the main website and documentation have published it, so shared tracking remains separately build-gated.
+Those pins establish local file identity, not live broker behavior. Protocol-v3 changes or a documentation-site release are not prerequisites for marketplace enrollment because the additional marketplace grant is broker-owned. Before treating production tracking and forms as verified, record evidence from the canonical deployed origin that:
+
+- the four-variable production build and --production artifact verification passed;
+- Umami loaded only from its configured origin and received the intended aggregate events without form or visitor data;
+- the existing kiosk form accepted the exact marketplace origin, confirmed every saved field, and received no tracking identifier;
+- website or documentation acceptance alone did not send marketplace activity, explicit marketplace acceptance enabled later marketplace activity for the current global generation, and global rejection, expiry, or generation rotation disabled that enrollment; and
+- DNT and GPC kept optional marketplace tracking off.
+
+The synthetic funnel and local artifact checks do not provide that deployed end-to-end evidence. No real-service end-to-end result is claimed by this repository documentation.
 
 The selected host is regular GitHub Pages. Pull requests produce downloadable CI review artifacts but no hosted PR environment. Main can publish the checked Pages artifact after explicit activation. See docs/github-pages.md for repository configuration, deployment controls, and the Cloudflare DNS record. No separate PR hosting service is used.
